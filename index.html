@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<h2>Square Feet</h2>
+<input type="number" id="sqft" onchange="squareFeetChanged()" onkeydown="squareFeetChanged()" onpaste="squareFeetChanged()" oninput="squareFeetChanged()"/>
+<h2>Zip Code</h2>
+<input type="number" id="zipcode" />
+<h2>Savings per year</h2>
+<input type="text" id="savings" disabled/>
+
+<script>
+    function squareFeetChanged() {
+        var sqft=document.getElementById("sqft").value;
+        var wattssqft = 15; // 15 watts/sqft
+        var lightperday = 5; // 5 hrs light per day
+        var costkwh = 11.5; //cost per kwh
+        var savings = sqft*wattssqft*lightperday*costkwh/1000*365;
+        var formatter = new Intl.NumberFormat('en-US', {
+            style: 'currency', 
+            currency: 'USD', 
+            maximumFractionDigits: 0,
+            });
+        document.getElementById("savings").value=formatter.format(Math.floor(savings));
+    }
+</script>
+
+
