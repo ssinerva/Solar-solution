@@ -1,11 +1,57 @@
 <!DOCTYPE html>
+<button onclick="onClickSolarCarCanopies()">I'm Interested In Solar Car Canopies</button> 
+<br/>
+<button onclick="onCickRooftopSolar()">I'm Interested In Rooftop Solar</button> 
+<br/>
+<button onclick="onCickRooftopSolar()">I'm Interested In Rooftop Solar</button> 
+<br/>
+<input placeholder="Your Zip Code" type="number" id="zipcode" />
+<br/>
+<input placeholder="Available Square Feet" type="number" id="sqft" onchange="squareFeetChanged()" onkeydown="squareFeetChanged()" onpaste="squareFeetChanged()" oninput="squareFeetChanged()"/>
+<br/>
+<button title="Roof Tool" onclick="roofToolClick()">Roof Tool </button> 
+<br/>
+<button onclick="onClickSeeMySolarSolution()">See My Solar Solution </button> 
 
-<h2>Square Feet</h2>
-<input type="number" id="sqft" onchange="squareFeetChanged()" onkeydown="squareFeetChanged()" onpaste="squareFeetChanged()" oninput="squareFeetChanged()"/>
-<h2>Zip Code</h2>
-<input type="number" id="zipcode" />
-<h2>Savings per year</h2>
-<input type="text" id="savings" disabled/>
+<br/>
+<br/>
+<br/>
+
+
+<h1> Number of parking spaces to be covered by solar canopy </h1>
+<br/>
+<input id="solarspaces" placeholder="Select Number" type="number" list="numbers-3and6" />
+
+<h1> Number of EV Charging Stations </h1>
+<br/>
+<input id="evstations" placeholder="Select Number" type="number" list="numbers-3-6" />
+
+<datalist id="numbers-3and6">
+    <option>3</option>
+    <option>6</option>
+</datalist>
+
+<datalist id="numbers-3-6">
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+    <option>6</option>
+</datalist>
+
+<br/>
+<br/>
+<br/>
+
+<h1>Which powerstation model?</h1>
+<br/>
+<button onclick="onClick35kw()">35kW</button>
+<button onclick="onClick70kw()">70kW</button> 
+<br/>
+<button onclick="onClickFinish()">Finish</button> 
+
+<br/>
+<input placeholder="Savings in $" type="text" id="savings" disabled/>
+<br/>
 
 <script>
     function squareFeetChanged() {
@@ -20,6 +66,10 @@
             maximumFractionDigits: 0,
             });
         document.getElementById("savings").value=formatter.format(Math.floor(savings));
+    }
+
+    function roofToolClick() {
+        
     }
 </script>
 
