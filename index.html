@@ -1,76 +1,384 @@
 <!DOCTYPE html>
-<button onclick="onClickSolarCarCanopies()">I'm Interested In Solar Car Canopies</button> 
-<br/>
-<button onclick="onCickRooftopSolar()">I'm Interested In Rooftop Solar</button> 
-<br/>
-<button onclick="onCickRooftopSolar()">I'm Interested In Rooftop Solar</button> 
-<br/>
-<input placeholder="Your Zip Code" type="number" id="zipcode" />
-<br/>
-<input placeholder="Available Square Feet" type="number" id="sqft" onchange="squareFeetChanged()" onkeydown="squareFeetChanged()" onpaste="squareFeetChanged()" oninput="squareFeetChanged()"/>
-<br/>
-<button title="Roof Tool" onclick="roofToolClick()">Roof Tool </button> 
-<br/>
-<button onclick="onClickSeeMySolarSolution()">See My Solar Solution </button> 
-
-<br/>
-<br/>
-<br/>
 
 
-<h1> Number of parking spaces to be covered by solar canopy </h1>
-<br/>
-<input id="solarspaces" placeholder="Select Number" type="number" list="numbers-3and6" />
+<body>
+    <div id='div-section-address'>
+        <h2> Address:</h2>
+        <input placeholder="123 Maple Street" type="text" id="input-address-street" />
+        <input placeholder="Zip Code" type="number" id="input-address-zip"/>
+        <input placeholder="City" type="text" id="input-address-city"/>
+        <br/>
+        State:
+        <select id="input-address-state">
+            <option disabled selected value="">--</option>
+            <option value="AL">AL</option>
+            <option value="AK">AK</option>
+            <option value="AR">AR</option>
+            <option value="AZ">AZ</option>
+            <option value="CA">CA</option>
+            <option value="CO">CO</option>
+            <option value="CT">CT</option>
+            <option value="DC">DC</option>
+            <option value="DE">DE</option>
+            <option value="FL">FL</option>
+            <option value="GA">GA</option>
+            <option value="HI">HI</option>
+            <option value="IA">IA</option>
+            <option value="ID">ID</option>
+            <option value="IL">IL</option>
+            <option value="IN">IN</option>
+            <option value="KS">KS</option>
+            <option value="KY">KY</option>
+            <option value="LA">LA</option>
+            <option value="MA">MA</option>
+            <option value="MD">MD</option>
+            <option value="ME">ME</option>
+            <option value="MI">MI</option>
+            <option value="MN">MN</option>
+            <option value="MO">MO</option>
+            <option value="MS">MS</option>
+            <option value="MT">MT</option>
+            <option value="NC">NC</option>
+            <option value="NE">NE</option>
+            <option value="NH">NH</option>
+            <option value="NJ">NJ</option>
+            <option value="NM">NM</option>
+            <option value="NV">NV</option>
+            <option value="NY">NY</option>
+            <option value="ND">ND</option>
+            <option value="OH">OH</option>
+            <option value="OK">OK</option>
+            <option value="OR">OR</option>
+            <option value="PA">PA</option>
+            <option value="RI">RI</option>
+            <option value="SC">SC</option>
+            <option value="SD">SD</option>
+            <option value="TN">TN</option>
+            <option value="TX">TX</option>
+            <option value="UT">UT</option>
+            <option value="VT">VT</option>
+            <option value="VA">VA</option>
+            <option value="WA">WA</option>
+            <option value="WI">WI</option>
+            <option value="WV">WV</option>
+            <option value="WY">WY</option>
+        </select>
+        <br/>
+        <button  id="button-address-next" onclick="onClickAddressNext()" disabled>Next</button> 
+    </div>
 
-<h1> Number of EV Charging Stations </h1>
-<br/>
-<input id="evstations" placeholder="Select Number" type="number" list="numbers-3-6" />
+    <div id="div-section-form" hidden>
+        <h2> I'm Interested in (select all that apply):</h2>
+        <input type="checkbox" id="checkbox-canopies" onclick="onClickInterestedIn()">Solar Car Canopies</input> 
+        <br/>
+        <input type="checkbox" id="checkbox-chargers" onclick="onClickInterestedIn()">Integrated EV Canopies with the Solar Canopies</input> 
+        <br/>
+        <input type="checkbox" id="checkbox-rooftop" onclick="onClickInterestedIn()">Rooftop Solar</input> 
 
-<datalist id="numbers-3and6">
-    <option>3</option>
-    <option>6</option>
-</datalist>
+        <br/>
+        <br/>
+        <br/>
 
-<datalist id="numbers-3-6">
-    <option>3</option>
-    <option>4</option>
-    <option>5</option>
-    <option>6</option>
-</datalist>
+        <h2> Number of parking spaces to be covered by solar canopy </h2>
+        <br/>
+        <input id="input-form-canopies" placeholder="Select Number" type="number" />
+        <h2> Number of EV Charging Stations</h2>
+        <br/>
+        <input id="input-form-chargingstations" placeholder="Select Number" type="number" />
 
-<br/>
-<br/>
-<br/>
+        <h2>Rooftop solar</h2>
+        <div>What's your rooftop square feet area</div>
+        <input placeholder="Enter sqft" type="number" id="input-form-sqft"/>
+        <div>What's percentage of this area do you think is available for solar installation </div>
+        <input placeholder="Enter percentage" type="number" id="input-form-percentage"/>
+        <br/>  
+        <br/>
+        <br/>
 
-<h1>Which powerstation model?</h1>
-<br/>
-<button onclick="onClick35kw()">35kW</button>
-<button onclick="onClick70kw()">70kW</button> 
-<br/>
-<button onclick="onClickFinish()">Finish</button> 
+        <div id=label>Total Solar PV Size (kW)</div><input type="text" id="output-pvsize" disabled/>
+        <div id=label>Total Cost</div><input type="text" id="output-cost" disabled/>
+        <div id=label>Annual Carbon Offset (Tons)</div><input type="text" id="output-carbon" disabled/>
+        <div id=label>Annual Electricity Savings</div><input type="text" id="output-" disabled/>
+        <div id=label>Tax Credit</div><input type="text" id="output-carbonon-offset" disabled/>
+        <div id=label>Depreciation Tax Credit</div><input type="text" id="output-carbonon-offset" disabled/>
+        <div id=label>Total Tax Benefits</div><input type="text" id="output-carbonon-offset" disabled/>
+        <br/>
+    </div>
 
-<br/>
-<input placeholder="Savings in $" type="text" id="savings" disabled/>
-<br/>
+</body>
+
 
 <script>
-    function squareFeetChanged() {
-        var sqft=document.getElementById("sqft").value;
-        var wattssqft = 15; // 15 watts/sqft
-        var lightperday = 5; // 5 hrs light per day
-        var costkwh = 11.5; //cost per kwh
-        var savings = sqft*wattssqft*lightperday*costkwh/1000*365;
+    var street=""
+    var city="";
+    var state="AA";
+    var zip=0000;
+
+    // rate in $/kwh
+    var stateEnergyCost=0.00;
+    // yeild in kwh/kw
+    var stateEnergyYeild=0;
+
+    var isRooftop=true;
+    var isCanopies=true;
+    var isCanopies=true;
+
+    // constants
+    var constSolarPvSizePerSpaceKw=3.096; //based on 9ftx20ft parking space and 17.2W/sqft
+    var constCarbonOffsetTonsPerKwh=0.000707;
+    var constTaxCreditRate=0.26; //26%
+    var constIncomeTaxRate=0.21; //21%
+    var constUtilityEscalationRate=0.02;
+    var constRooftopSolarWattsSqft=11.6;
+    var constChargersSolarCostSpace=15000;
+    var constChargersChargerCostEach=5000;
+    var constCanopiesSolarCostSpace=10000;
+    var constRooftopSolarCostWatt=1.80;
+
+
+    onLoad();
+
+    function onLoad() {
+
+        var inputs = document.querySelectorAll('[id^="input-form-"]');
+        inputs.forEach(function(input) {
+            input.onkeydown=doCalculations;
+            input.onchange=doCalculations;
+            input.onpaste=doCalculations;
+            input.oninput=doCalculations;
+        });
+
+        var inputs = document.querySelectorAll('[id^="input-address-"]');
+        inputs.forEach(function(input) {
+            input.onkeydown=onAddressChange;
+            input.onchange=onAddressChange;
+            input.onpaste=onAddressChange;
+            input.oninput=onAddressChange;
+        });
+
+    }
+
+    function onAddressChange() {
+        street = document.getElementById("input-address-street").value;
+        city = document.getElementById("input-address-city").value;
+        zip = document.getElementById("input-address-zip").value;
+        state = document.getElementById("input-address-state").value;
+
+        var regexStreet = new RegExp("^.+\ .+$");
+        var regexCity = new RegExp("^.+$");
+        var regexZip = new RegExp("^[0-9]{5}$");
+        var regexState = new RegExp("^[A-Z][A-Z]$");
+        
+        var validStreet = regexStreet.test(street);
+        var validCity = regexCity.test(city);
+        var validZip = regexZip.test(zip);
+        var validSate = regexState.test(state);
+
+        if (validSate) {
+            stateEnergyCost=stateEnergyCostLookup[state];
+            stateEnergyYeild=stateEnergyYeildLookup[state];
+        }
+        
+        var isAdderessValid = (validStreet && validCity && validZip && validSate);
+        document.getElementById("button-address-next").disabled = !isAdderessValid;
+    }
+
+    function onClickInterestedIn() {
+        isRooftop = document.getElementById("checkbox-rooftop").checked;
+        isCanopies = document.getElementById("checkbox-canopies").checked;
+        isChargers = document.getElementById("checkbox-chargers").checked;
+        //document.getElementById("checkbox-chargers").disabled = !isCanopies;
+        //document.getElementById("button-interest-next").disabled = !(isRooftop || isCanopies || isCanopies);
+    }
+
+    function onClickAddressNext(){
+        document.getElementById("div-section-address").hidden = true;
+        document.getElementById("div-section-form").hidden = false;
+    }
+
+    function doCalculations() {
+
+        var canopiesNumberSpaces = document.getElementById("input-form-canopies").value;
+        var chargersNumberSpaces = document.getElementById("input-form-chargingstations").value;
+        var rooftopTotalSquareFeet = document.getElementById("input-form-sqft").value;
+        var rooftopPercentageAvailable = document.getElementById("input-form-percentage").value;
+
+        // ev charging spaces
+        var chargersTotalSolarPvSizeKw=chargersNumberSpaces*constSolarPvSizePerSpaceKw;
+        var chargersTotalCost=(constChargersChargerCostEach+constChargersSolarCostSpace)*chargersNumberSpaces;
+        var chargersTotalSolarYeildKwh=constSolarPvSizePerSpaceKw*chargersNumberSpaces*stateEnergyYeild;
+        var chargersCarbonOffsetTons=chargersTotalSolarYeildKwh*constCarbonOffsetTonsPerKwh;
+        var chargersAnnualElectricitySavings=chargersTotalSolarYeildKwh*stateEnergyCost;
+        var chargersTaxCreditOnSoalr=chargersNumberSpaces*constChargersSolarCostSpace*constTaxCreditRate;
+        var chargersDepreciationTaxBenefit=(constChargersSolarCostSpace*chargersNumberSpaces + chargersTaxCreditOnSoalr*0.5)*constIncomeTaxRate+constChargersSolarCostSpace*chargersNumberSpaces*constIncomeTaxRate;
+        var chargersNetCostAfterTaxBenefits=chargersTotalCost-(chargersTaxCreditOnSoalr+chargersDepreciationTaxBenefit);
+        var chargersTotalElectricitySavings25Year=doElectricitySavingsOverYears(chargersAnnualElectricitySavings, constUtilityEscalationRate, 25);
+
+        // canopy spaces
+        var canopiesTotalSolarPvSizeKw=canopiesNumberSpaces*constSolarPvSizePerSpaceKw;
+        var canopiesTotalCost=constCanopiesSolarCostSpace*canopiesNumberSpaces;
+        var canopiesTotalSolarYeildKwh=constSolarPvSizePerSpaceKw*canopiesNumberSpaces*stateEnergyYeild;
+        var canopiesCarbonOffsetTons=canopiesTotalSolarYeildKwh*constCarbonOffsetTonsPerKwh;
+        var canopiesAnnualElectricitySavings=canopiesTotalSolarYeildKwh*stateEnergyCost;
+        var canopiesTaxCreditOnSoalr=canopiesNumberSpaces*constCanopiesSolarCostSpace*constTaxCreditRate;
+        var canopiesDepreciationTaxBenefit=(constCanopiesSolarCostSpace*canopiesNumberSpaces + canopiesTaxCreditOnSoalr*0.5)*constIncomeTaxRate;
+        var canopiesNetCostAfterTaxBenefits=canopiesTotalCost-(canopiesTaxCreditOnSoalr+canopiesDepreciationTaxBenefit);
+        var canopiesTotalElectricitySavings25Year=doElectricitySavingsOverYears(canopiesAnnualElectricitySavings, constUtilityEscalationRate, 25);
+
+        // rooftop
+        var rooftopTotalSolarPvSizeKw=rooftopTotalSquareFeet*rooftopPercentageAvailable/100*constRooftopSolarWattsSqft;
+        var rooftopTotalCost=rooftopTotalSolarPvSizeKw*constRooftopSolarCostWatt;
+        var rooftopTotalSolarYeildKwh=rooftopTotalSolarPvSizeKw*stateEnergyYeild;
+        var rooftopCarbonOffsetTons=rooftopTotalSolarYeildKwh*rooftopCarbonOffsetTons/1000;
+        var rooftopAnnualElectricitySavings=rooftopTotalSolarYeildKwh*stateEnergyCost;
+        var rooftopTaxCreditOnSoalr=rooftopTotalCost*constTaxCreditRate;
+        var rooftopDepreciationTaxBenefit=(rooftopTotalCost-rooftopTaxCreditOnSoalr*0.5)*constIncomeTaxRate;
+        var rooftopNetCostAfterTaxBenefits=rooftopTotalCost-(rooftopTaxCreditOnSoalr+rooftopDepreciationTaxBenefit);
+        var rooftopTotalElectricitySavings25Year=doElectricitySavingsOverYears(canopiesAnnualElectricitySavings, constUtilityEscalationRate, 25);
+
+        console.log("do calculation");
+
+        var totalSolarPvSizeKw=chargersTotalSolarPvSizeKw+canopiesTotalSolarPvSizeKw+rooftopTotalSolarPvSizeKw;
+        var totalCost=chargersTotalCost+canopiesTotalCost+rooftopTotalCost;
+        var totalCarbonOffsetTons=chargersCarbonOffsetTons+canopiesCarbonOffsetTons+rooftopCarbonOffsetTons;
+        var totalAnnualElectricitySavings=chargersAnnualElectricitySavings+canopiesAnnualElectricitySavings+rooftopAnnualElectricitySavings;
+        var totalTaxCreditOnSolar=chargersTaxCreditOnSoalr+canopiesTaxCreditOnSoalr+rooftopTaxCreditOnSoalr;
+        var totalDepreciationTaxBenefit=chargersDepreciationTaxBenefit+canopiesDepreciationTaxBenefit+rooftopDepreciationTaxBenefit;
+        var totalTaxBenefits=totalTaxCreditOnSolar+totalDepreciationTaxBenefit;
+        var totalNetCostAfterTaxBenefits=chargersNetCostAfterTaxBenefits+canopiesNetCostAfterTaxBenefits+rooftopNetCostAfterTaxBenefits;
+        var totalSimplePaybackYears=totalNetCostAfterTaxBenefits/totalAnnualElectricitySavings;
+        var totalElectricitySavings25Year=chargersTotalElectricitySavings25Year+canopiesTotalElectricitySavings25Year+rooftopTotalElectricitySavings25Year;
+
+
         var formatter = new Intl.NumberFormat('en-US', {
             style: 'currency', 
             currency: 'USD', 
             maximumFractionDigits: 0,
             });
-        document.getElementById("savings").value=formatter.format(Math.floor(savings));
+            
+        document.getElementById("output-pvsize").value=totalSolarPvSizeKw;
+        document.getElementById("output-cost").value=formatter.format(Math.floor(totalCost));
+        document.getElementById("output-carbon").value=totalCarbonOffsetTons;
+
+
+
     }
 
-    function roofToolClick() {
-        
+    function doElectricitySavingsOverYears(annualSavings, escalationRate, years){
+        var escelatedAmount = annualSavings*(1-((1+escalationRate)**years)/escalationRate);
+        return escelatedAmount;
     }
+
+
+var stateEnergyCostLookup = {
+"AK": 0.1980,
+"AL": 0.1152, 
+"AR": 0.0878, 
+"AZ": 0.1025, 
+"CA": 0.1667, 
+"CO": 0.1043, 
+"CT": 0.1675, 
+"DC": 0.1226, 
+"DE": 0.0953, 
+"FL": 0.0927, 
+"GA": 0.1002, 
+"HI": 0.2923, 
+"IA": 0.0999, 
+"ID": 0.0767, 
+"IL": 0.0908, 
+"IN": 0.1103, 
+"KS": 0.1029, 
+"KY": 0.1015, 
+"LA": 0.0891, 
+"MA": 0.1680, 
+"MD": 0.0997, 
+"ME": 0.1283, 
+"MI": 0.1139, 
+"MN": 0.1034, 
+"MO": 0.0907, 
+"MS": 0.1052, 
+"MT": 0.1041, 
+"NC": 0.0881, 
+"ND": 0.0901, 
+"NE": 0.0885, 
+"NH": 0.1593, 
+"NJ": 0.1223, 
+"NM": 0.0979, 
+"NV": 0.0804, 
+"NY": 0.1406, 
+"OH": 0.0972, 
+"OK": 0.0798, 
+"OR": 0.0885, 
+"PA": 0.0871, 
+"RI": 0.1638, 
+"SC": 0.1058, 
+"SD": 0.0959, 
+"TN": 0.1065, 
+"TX": 0.0806, 
+"UT": 0.0826, 
+"VA": 0.0818, 
+"VT": 0.1598, 
+"WA": 0.0875, 
+"WI": 0.1072, 
+"WV": 0.0916, 
+"WY": 0.0964
+};
+
+var stateEnergyYeildLookup = {
+"AK": 932,
+"AL": 1365,
+"AR": 1338,
+"AZ": 1667,
+"CA": 1523,
+"CO": 1496,
+"CT": 1215,
+"DC": 1306,
+"DE": 1325,
+"FL": 1403,
+"GA": 1378,
+"HI": 1654,
+"IA": 1279,
+"ID": 1367,
+"IL": 1317,
+"IN": 1277,
+"KS": 1358,
+"KY": 1276,
+"LA": 1446,
+"MA": 1228,
+"MD": 1307,
+"ME": 1182,
+"MI": 1216,
+"MN": 1224,
+"MO": 1289,
+"MS": 1403,
+"MT": 1224,
+"NC": 1351,
+"ND": 1239,
+"NE": 1346,
+"NH": 1208,
+"NJ": 1273,
+"NM": 1630,
+"NV": 1590,
+"NY": 1175,
+"OH": 1254,
+"OK": 1477,
+"OR": 1115,
+"PA": 1233,
+"RI": 1229,
+"SC": 1399,
+"SD": 1296,
+"TN": 1309,
+"TX": 1419,
+"UT": 1397,
+"VA": 1318,
+"VT": 1137,
+"WA": 1016,
+"WI": 1225,
+"WV": 1226,
+"WY": 1444
+};
+
+
 </script>
 
 
