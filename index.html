@@ -98,10 +98,20 @@
         <div id=label>Total Solar PV Size (kW)</div><input type="text" id="output-pvsize" disabled/>
         <div id=label>Total Cost</div><input type="text" id="output-cost" disabled/>
         <div id=label>Annual Carbon Offset (Tons)</div><input type="text" id="output-carbon" disabled/>
-        <div id=label>Annual Electricity Savings</div><input type="text" id="output-" disabled/>
-        <div id=label>Tax Credit</div><input type="text" id="output-carbonon-offset" disabled/>
-        <div id=label>Depreciation Tax Credit</div><input type="text" id="output-carbonon-offset" disabled/>
-        <div id=label>Total Tax Benefits</div><input type="text" id="output-carbonon-offset" disabled/>
+        <div id=label>Annual Electricity Savings</div><input type="text" id="output-savings" disabled/>
+        <div id=label>Solar Tax Credit</div><input type="text" id="output-tax-solar" disabled/>
+        <div id=label>Depreciation Tax Credit</div><input type="text" id="output-tax-depreciation" disabled/>
+        <div id=label>Total Tax Benefits</div><input type="text" id="output-tax-total" disabled/>
+        <div id=label>Net Cost After Tax Benefits</div><input type="text" id="output-netcost" disabled/>
+        <div id=label>Simple Payback Years</div><input type="text" id="output-years" disabled/>
+        <div id=label>Total Electricity Savings Over 25 Years</div><input type="text" id="output-25years" disabled/>
+
+        <br/>
+        
+
+        <input type="button" onclick="window.print()" value="Print"/>
+        <input type="button" value="Get In Touch" />
+
         <br/>
     </div>
 
@@ -210,7 +220,7 @@
         var chargersCarbonOffsetTons=chargersTotalSolarYeildKwh*constCarbonOffsetTonsPerKwh;
         var chargersAnnualElectricitySavings=chargersTotalSolarYeildKwh*stateEnergyCost;
         var chargersTaxCreditOnSoalr=chargersNumberSpaces*constChargersSolarCostSpace*constTaxCreditRate;
-        var chargersDepreciationTaxBenefit=(constChargersSolarCostSpace*chargersNumberSpaces + chargersTaxCreditOnSoalr*0.5)*constIncomeTaxRate+constChargersSolarCostSpace*chargersNumberSpaces*constIncomeTaxRate;
+        var chargersDepreciationTaxBenefit=(((constChargersSolarCostSpace*chargersNumberSpaces)-(chargersTaxCreditOnSoalr*0.50))*constIncomeTaxRate)+(constChargersChargerCostEach*chargersNumberSpaces*constIncomeTaxRate);
         var chargersNetCostAfterTaxBenefits=chargersTotalCost-(chargersTaxCreditOnSoalr+chargersDepreciationTaxBenefit);
         var chargersTotalElectricitySavings25Year=doElectricitySavingsOverYears(chargersAnnualElectricitySavings, constUtilityEscalationRate, 25);
 
@@ -221,22 +231,22 @@
         var canopiesCarbonOffsetTons=canopiesTotalSolarYeildKwh*constCarbonOffsetTonsPerKwh;
         var canopiesAnnualElectricitySavings=canopiesTotalSolarYeildKwh*stateEnergyCost;
         var canopiesTaxCreditOnSoalr=canopiesNumberSpaces*constCanopiesSolarCostSpace*constTaxCreditRate;
-        var canopiesDepreciationTaxBenefit=(constCanopiesSolarCostSpace*canopiesNumberSpaces + canopiesTaxCreditOnSoalr*0.5)*constIncomeTaxRate;
+        var canopiesDepreciationTaxBenefit=(canopiesTotalCost-canopiesTaxCreditOnSoalr*0.5)*constIncomeTaxRate;
         var canopiesNetCostAfterTaxBenefits=canopiesTotalCost-(canopiesTaxCreditOnSoalr+canopiesDepreciationTaxBenefit);
         var canopiesTotalElectricitySavings25Year=doElectricitySavingsOverYears(canopiesAnnualElectricitySavings, constUtilityEscalationRate, 25);
 
         // rooftop
-        var rooftopTotalSolarPvSizeKw=rooftopTotalSquareFeet*rooftopPercentageAvailable/100*constRooftopSolarWattsSqft;
-        var rooftopTotalCost=rooftopTotalSolarPvSizeKw*constRooftopSolarCostWatt;
+        var rooftopTotalSolarPvSizeKw=rooftopTotalSquareFeet*rooftopPercentageAvailable/100*constRooftopSolarWattsSqft/1000;
+        var rooftopTotalCost=rooftopTotalSolarPvSizeKw*constRooftopSolarCostWatt*1000;
         var rooftopTotalSolarYeildKwh=rooftopTotalSolarPvSizeKw*stateEnergyYeild;
-        var rooftopCarbonOffsetTons=rooftopTotalSolarYeildKwh*rooftopCarbonOffsetTons/1000;
+        var rooftopCarbonOffsetTons=rooftopTotalSolarYeildKwh*constCarbonOffsetTonsPerKwh;
         var rooftopAnnualElectricitySavings=rooftopTotalSolarYeildKwh*stateEnergyCost;
         var rooftopTaxCreditOnSoalr=rooftopTotalCost*constTaxCreditRate;
         var rooftopDepreciationTaxBenefit=(rooftopTotalCost-rooftopTaxCreditOnSoalr*0.5)*constIncomeTaxRate;
         var rooftopNetCostAfterTaxBenefits=rooftopTotalCost-(rooftopTaxCreditOnSoalr+rooftopDepreciationTaxBenefit);
-        var rooftopTotalElectricitySavings25Year=doElectricitySavingsOverYears(canopiesAnnualElectricitySavings, constUtilityEscalationRate, 25);
+        var rooftopTotalElectricitySavings25Year=doElectricitySavingsOverYears(rooftopAnnualElectricitySavings, constUtilityEscalationRate, 25);
 
-        console.log("do calculation");
+        console.log("do calculation"+totalCarbonOffsetTons);
 
         var totalSolarPvSizeKw=chargersTotalSolarPvSizeKw+canopiesTotalSolarPvSizeKw+rooftopTotalSolarPvSizeKw;
         var totalCost=chargersTotalCost+canopiesTotalCost+rooftopTotalCost;
@@ -253,19 +263,24 @@
         var formatter = new Intl.NumberFormat('en-US', {
             style: 'currency', 
             currency: 'USD', 
-            maximumFractionDigits: 0,
+            maximumFractionDigits: 2,
+            minimumFractionDigits: 2,
             });
             
-        document.getElementById("output-pvsize").value=totalSolarPvSizeKw;
-        document.getElementById("output-cost").value=formatter.format(Math.floor(totalCost));
-        document.getElementById("output-carbon").value=totalCarbonOffsetTons;
-
-
-
+        document.getElementById("output-pvsize").value=totalSolarPvSizeKw.toLocaleString();
+        document.getElementById("output-cost").value=formatter.format(totalCost);
+        document.getElementById("output-carbon").value=totalCarbonOffsetTons.toLocaleString();
+        document.getElementById("output-savings").value=formatter.format(totalAnnualElectricitySavings);
+        document.getElementById("output-tax-solar").value=formatter.format(totalTaxCreditOnSolar);
+        document.getElementById("output-tax-depreciation").value=formatter.format(totalDepreciationTaxBenefit);
+        document.getElementById("output-tax-total").value=formatter.format(totalTaxBenefits);
+        document.getElementById("output-netcost").value=formatter.format(totalNetCostAfterTaxBenefits);
+        document.getElementById("output-years").value=totalSimplePaybackYears.toLocaleString();
+        document.getElementById("output-25years").value=formatter.format(totalElectricitySavings25Year);
     }
 
     function doElectricitySavingsOverYears(annualSavings, escalationRate, years){
-        var escelatedAmount = annualSavings*(1-((1+escalationRate)**years)/escalationRate);
+        var escelatedAmount = annualSavings*(1-((1+escalationRate)**years))/(1-(1+escalationRate));
         return escelatedAmount;
     }
 
