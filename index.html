@@ -3,6 +3,7 @@
 
 <body>
     <div id='div-section-address'>
+
         <h2> Address:</h2>
         <input placeholder="123 Maple Street" type="text" id="input-address-street" />
         <input placeholder="Zip Code" type="number" id="input-address-zip"/>
@@ -64,37 +65,49 @@
             <option value="WY">WY</option>
         </select>
         <br/>
-        <button  id="button-address-next" onclick="onClickAddressNext()" disabled>Next</button> 
+        <input placeholder="First & Last Name" type="text" id="input-address-name"/>
+        <br/>
+        <input placeholder="Email" type="text" id="input-address-email"/>
+        <br/>
+        <p  id="error-message"></p> 
+        <br/>
+        <button  id="button-address-next" onclick="onClickAddressNext()">Next</button> 
     </div>
 
     <div id="div-section-form" hidden>
+
+        <br/>
+
         <h2> I'm Interested in (select all that apply):</h2>
-        <input type="checkbox" id="checkbox-canopies" onclick="onClickInterestedIn()">Solar Car Canopies</input> 
+        <input type="checkbox" id="checkbox-canopies" onclick="doCalculations()">Solar Car Canopies</input> 
         <br/>
-        <input type="checkbox" id="checkbox-chargers" onclick="onClickInterestedIn()">Integrated EV Canopies with the Solar Canopies</input> 
+        <input type="checkbox" id="checkbox-chargers" onclick="doCalculations()">Integrated EV Canopies with the Solar Canopies</input> 
         <br/>
-        <input type="checkbox" id="checkbox-rooftop" onclick="onClickInterestedIn()">Rooftop Solar</input> 
+        <input type="checkbox" id="checkbox-rooftop" onclick="doCalculations()">Rooftop Solar</input> 
 
-        <br/>
-        <br/>
-        <br/>
-
+        <div id="div-form-canopies">
         <h2> Number of parking spaces to be covered by solar canopy </h2>
         <br/>
         <input id="input-form-canopies" placeholder="Select Number" type="number" />
-        <h2> Number of EV Charging Stations</h2>
-        <br/>
-        <input id="input-form-chargingstations" placeholder="Select Number" type="number" />
+        </div>
 
-        <h2>Rooftop solar</h2>
-        <div>What's your rooftop square feet area</div>
-        <input placeholder="Enter sqft" type="number" id="input-form-sqft"/>
-        <div>What's percentage of this area do you think is available for solar installation </div>
-        <input placeholder="Enter percentage" type="number" id="input-form-percentage"/>
-        <br/>  
-        <br/>
-        <br/>
+        <div id="div-form-chargingstations">
+            <h2> Number of EV Charging Stations</h2>
+            <br/>
+            <input id="input-form-chargingstations" placeholder="Select Number" type="number" />
+        </div>  
 
+        <div id="div-form-rooftop">
+            <h2>Rooftop solar</h2>
+            <div>What's your rooftop square feet area</div>
+            <input placeholder="Enter sqft" type="number" id="input-form-sqft"/>
+            <div>What's percentage of this area do you think is available for solar installation </div>
+            <input placeholder="Enter percentage" type="number" id="input-form-percentage"/>
+        </div>
+
+    <br/>  
+    <br/>
+    <br/>
         <div id=label>Total Solar PV Size (kW)</div><input type="text" id="output-pvsize" disabled/>
         <div id=label>Total Cost</div><input type="text" id="output-cost" disabled/>
         <div id=label>Annual Carbon Offset (Tons)</div><input type="text" id="output-carbon" disabled/>
@@ -110,28 +123,37 @@
         
 
         <input type="button" onclick="window.print()" value="Print"/>
-        <input type="button" value="Get In Touch" />
+        <input type="button" id='button-email' value="Get In Touch" onclick="sendEmail()"/>
+        <div id="p-thanks" hidden>Thank you! Someone from our team will be in touch with you shortly!</div>
 
         <br/>
     </div>
 
 </body>
 
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
 
 <script>
     var street=""
     var city="";
     var state="AA";
     var zip=0000;
+    var email='';
+    var yourName = '';
+
+    var canopiesNumberSpaces = 0;
+    var chargersNumberSpaces = 0;
+    var rooftopTotalSquareFeet = 0;
+    var rooftopPercentageAvailable = 0;
 
     // rate in $/kwh
     var stateEnergyCost=0.00;
     // yeild in kwh/kw
     var stateEnergyYeild=0;
 
-    var isRooftop=true;
-    var isCanopies=true;
-    var isCanopies=true;
+    var isRooftop=false;
+    var isCanopies=false;
+    var isCanopies=false;
 
     // constants
     var constSolarPvSizePerSpaceKw=3.096; //based on 9ftx20ft parking space and 17.2W/sqft
@@ -157,7 +179,7 @@
             input.onpaste=doCalculations;
             input.oninput=doCalculations;
         });
-
+        /*
         var inputs = document.querySelectorAll('[id^="input-address-"]');
         inputs.forEach(function(input) {
             input.onkeydown=onAddressChange;
@@ -165,24 +187,32 @@
             input.onpaste=onAddressChange;
             input.oninput=onAddressChange;
         });
+        */
 
     }
 
-    function onAddressChange() {
+    function onClickAddressNext(){
+
         street = document.getElementById("input-address-street").value;
         city = document.getElementById("input-address-city").value;
         zip = document.getElementById("input-address-zip").value;
         state = document.getElementById("input-address-state").value;
+        email = document.getElementById("input-address-email").value;
+        yourName = document.getElementById("input-address-name").value;
 
         var regexStreet = new RegExp("^.+\ .+$");
         var regexCity = new RegExp("^.+$");
         var regexZip = new RegExp("^[0-9]{5}$");
         var regexState = new RegExp("^[A-Z][A-Z]$");
+        var regexEmail = new RegExp("^.+@.+\..+$");
+        var regexName = new RegExp("^.+ .+$");
         
         var validStreet = regexStreet.test(street);
         var validCity = regexCity.test(city);
         var validZip = regexZip.test(zip);
         var validSate = regexState.test(state);
+        var validEmail = regexEmail.test(email);
+        var validName = regexName.test(yourName);
 
         if (validSate) {
             stateEnergyCost=stateEnergyCostLookup[state];
@@ -190,28 +220,58 @@
         }
         
         var isAdderessValid = (validStreet && validCity && validZip && validSate);
-        document.getElementById("button-address-next").disabled = !isAdderessValid;
-    }
+        //document.getElementById("button-address-next").disabled = !isAdderessValid;
 
-    function onClickInterestedIn() {
-        isRooftop = document.getElementById("checkbox-rooftop").checked;
-        isCanopies = document.getElementById("checkbox-canopies").checked;
-        isChargers = document.getElementById("checkbox-chargers").checked;
-        //document.getElementById("checkbox-chargers").disabled = !isCanopies;
-        //document.getElementById("button-interest-next").disabled = !(isRooftop || isCanopies || isCanopies);
-    }
+        if(!isAdderessValid){
+            document.getElementById("error-message").innerHTML="Please enter a valid address";
+        }
+        else if(!(validEmail)){
+            document.getElementById("error-message").innerHTML="Please enter a valid email address";
+        }
+        else if(!(validName)){
+            document.getElementById("error-message").innerHTML="Please enter your first and last name";
+        }
+        else if(!(validName)){
+            document.getElementById("error-message").innerHTML="Please enter your name";
+        }
+        else {
 
-    function onClickAddressNext(){
-        document.getElementById("div-section-address").hidden = true;
-        document.getElementById("div-section-form").hidden = false;
+            document.getElementById("div-section-address").hidden = true;
+            document.getElementById("div-section-form").hidden = false;
+
+        }
     }
 
     function doCalculations() {
 
-        var canopiesNumberSpaces = document.getElementById("input-form-canopies").value;
-        var chargersNumberSpaces = document.getElementById("input-form-chargingstations").value;
-        var rooftopTotalSquareFeet = document.getElementById("input-form-sqft").value;
-        var rooftopPercentageAvailable = document.getElementById("input-form-percentage").value;
+        canopiesNumberSpaces = document.getElementById("input-form-canopies").value;
+        chargersNumberSpaces = document.getElementById("input-form-chargingstations").value;
+        rooftopTotalSquareFeet = document.getElementById("input-form-sqft").value;
+        rooftopPercentageAvailable = document.getElementById("input-form-percentage").value;
+
+        // get the value of the checkboxes
+        isRooftop = document.getElementById("checkbox-rooftop").checked;
+        isCanopies = document.getElementById("checkbox-canopies").checked;
+        isChargers = document.getElementById("checkbox-chargers").checked;
+
+        // hide/unhide the inputs depending on the checkboxes
+        document.getElementById("div-form-canopies").hidden = !isCanopies;
+        document.getElementById("div-form-chargingstations").hidden = !isChargers;
+        document.getElementById("div-form-rooftop").hidden = !isRooftop;
+
+        // zero out any they are not interested in
+        if (!isCanopies){
+            canopiesNumberSpaces = 0;
+        }
+
+        if (!isChargers){
+            chargersNumberSpaces = 0;
+        }
+
+        if (!isRooftop){
+            rooftopTotalSquareFeet = 0;
+            rooftopPercentageAvailable = 0;
+        }
 
         // ev charging spaces
         var chargersTotalSolarPvSizeKw=chargersNumberSpaces*constSolarPvSizePerSpaceKw;
@@ -282,6 +342,35 @@
     function doElectricitySavingsOverYears(annualSavings, escalationRate, years){
         var escelatedAmount = annualSavings*(1-((1+escalationRate)**years))/(1-(1+escalationRate));
         return escelatedAmount;
+    }
+
+    function sendEmail(){
+        notesStr = "Form Responses:\n\r";
+
+        addressStr = street + ', ' + city + ', ' + state + ' ' + zip;
+
+        var templateParams = {
+            name: yourName,
+            email: email,
+            address: addressStr,
+            interestCanopies: isCanopies,
+            interestChargers: isChargers,
+            interestRooftop: isRooftop,
+            canopies: canopiesNumberSpaces,
+            chargers: chargersNumberSpaces,
+            rooftopsqft: rooftopTotalSquareFeet,
+            rooftoppercent: rooftopPercentageAvailable,
+        };
+        emailjs.init("user_whFAArlovqbTEMG0eijLf");
+        emailjs.send('test-gmail', 'template_ahhaukh', templateParams)
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+        }, function(error) {
+            console.log('FAILED...', error);
+        });
+
+        document.getElementById("button-email").hidden = true;
+        document.getElementById("p-thanks").hidden = false;
     }
 
 
