@@ -3,15 +3,15 @@
 
 <body>
     <div id='div-section-address'>
-
-        <h2> Address:</h2>
-        <input placeholder="123 Maple Street" type="text" id="input-address-street" />
-        <input placeholder="Zip Code" type="number" id="input-address-zip"/>
+        <br/>
+        <input placeholder="Dealership Name"text" id="input-address-name"/>
+        <br/>
+        <input placeholder="Address" type="text" id="input-address-street" />
+        <br/>
         <input placeholder="City" type="text" id="input-address-city"/>
         <br/>
-        State:
         <select id="input-address-state">
-            <option disabled selected value="">--</option>
+            <option disabled selected value="">State</option>
             <option value="AL">AL</option>
             <option value="AK">AK</option>
             <option value="AR">AR</option>
@@ -65,9 +65,12 @@
             <option value="WY">WY</option>
         </select>
         <br/>
-        <input placeholder="First & Last Name" type="text" id="input-address-name"/>
+        <input placeholder="Zip" type="number" id="input-address-zip"/>
+        <br/>
         <br/>
         <input placeholder="Email" type="text" id="input-address-email"/>
+        <br/>
+        <input placeholder="Phone Number" type="text" id="input-address-phone"/>
         <br/>
         <p  id="error-message"></p> 
         <br/>
@@ -78,48 +81,44 @@
 
         <br/>
 
-        <h2> I'm Interested in (select all that apply):</h2>
-        <input type="checkbox" id="checkbox-canopies" onclick="doCalculations()">Solar Car Canopies</input> 
+        <h2> What are you interested in?</h2>
+        <h2>(select all that apply)<h2>
         <br/>
-        <input type="checkbox" id="checkbox-chargers" onclick="doCalculations()">Integrated EV Canopies with the Solar Canopies</input> 
+        <input type="checkbox" id="checkbox-chargers" onclick="doCalculations()">EV Chargers</input> 
         <br/>
-        <input type="checkbox" id="checkbox-rooftop" onclick="doCalculations()">Rooftop Solar</input> 
-
-        <div id="div-form-canopies">
-        <h2> Number of parking spaces to be covered by solar canopy </h2>
-        <br/>
-        <input id="input-form-canopies" placeholder="Select Number" type="number" />
-        </div>
-
-        <div id="div-form-chargingstations">
-            <h2> Number of EV Charging Stations</h2>
-            <br/>
+        <div id="div-form-chargingstations" hidden>
+            <div>How many units</div>
             <input id="input-form-chargingstations" placeholder="Select Number" type="number" />
         </div>  
-
-        <div id="div-form-rooftop">
-            <h2>Rooftop solar</h2>
-            <div>What's your rooftop square feet area</div>
+        <br/>
+        <input type="checkbox" id="checkbox-canopies" onclick="doCalculations()">Solar Canopies</input> 
+        <br/>
+        <div id="div-form-canopies" hidden>
+            <div> How many parking spaces </div>
+            <input id="input-form-canopies" placeholder="Select Number" type="number" />
+        </div>
+        <br/>
+        <input type="checkbox" id="checkbox-rooftop" onclick="doCalculations()">Rooftop Solar</input> 
+        <br/>  
+        <div id="div-form-rooftop" hidden>
+            <div>What is your approximate rooftop area</div>
+            <div>(square feet)</div>
             <input placeholder="Enter sqft" type="number" id="input-form-sqft"/>
-            <div>What's percentage of this area do you think is available for solar installation </div>
+            <div>Approximately what percentage of above area is available for solar</div>
             <input placeholder="Enter percentage" type="number" id="input-form-percentage"/>
         </div>
 
     <br/>  
     <br/>
     <br/>
-        <div id=label>Total Solar PV Size (kW)</div><input type="text" id="output-pvsize" disabled/>
-        <div id=label>Total Cost</div><input type="text" id="output-cost" disabled/>
-        <div id=label>Annual Carbon Offset (Tons)</div><input type="text" id="output-carbon" disabled/>
-        <div id=label>Annual Electricity Savings</div><input type="text" id="output-savings" disabled/>
-        <div id=label>Solar Tax Credit</div><input type="text" id="output-tax-solar" disabled/>
-        <div id=label>Depreciation Tax Credit</div><input type="text" id="output-tax-depreciation" disabled/>
-        <div id=label>Total Tax Benefits</div><input type="text" id="output-tax-total" disabled/>
-        <div id=label>Net Cost After Tax Benefits</div><input type="text" id="output-netcost" disabled/>
-        <div id=label>Simple Payback Years</div><input type="text" id="output-years" disabled/>
-        <div id=label>Total Electricity Savings Over 25 Years</div><input type="text" id="output-25years" disabled/>
-
-        <br/>
+    <div id=label>Annual Electricity Savings</div><input type="text" id="output-savings" disabled/>
+    <div id=label>Total Electricity Savings Over 25 Years of Warrantied Life</div><input type="text" id="output-25years" disabled/>
+    <div id=label>Annual Carbon Offset (Tons of CO2)</div><input type="text" id="output-carbon" disabled/>
+    <div id=label>Total Cost</div><input type="text" id="output-cost" disabled/>
+    <div id=label>Total Tax Benefits (Tax Credit and Depreciation)</div><input type="text" id="output-tax-total" disabled/>
+    <div id=label>Net Cost After Tax Benefits</div><input type="text" id="output-netcost" disabled/>        
+    <div id=label>Total Solar PV Size (kW)</div><input type="text" id="output-pvsize" disabled/>
+    <br/>
         
 
         <input type="button" onclick="window.print()" value="Print"/>
@@ -140,6 +139,7 @@
     var zip=0000;
     var email='';
     var yourName = '';
+    var phone ='';
 
     var canopiesNumberSpaces = 0;
     var chargersNumberSpaces = 0;
@@ -166,6 +166,7 @@
     var constChargersChargerCostEach=5000;
     var constCanopiesSolarCostSpace=10000;
     var constRooftopSolarCostWatt=1.80;
+
 
 
     onLoad();
@@ -199,6 +200,7 @@
         state = document.getElementById("input-address-state").value;
         email = document.getElementById("input-address-email").value;
         yourName = document.getElementById("input-address-name").value;
+        phone = document.getElementById("input-address-phone").value;
 
         var regexStreet = new RegExp("^.+\ .+$");
         var regexCity = new RegExp("^.+$");
@@ -206,6 +208,7 @@
         var regexState = new RegExp("^[A-Z][A-Z]$");
         var regexEmail = new RegExp("^.+@.+\..+$");
         var regexName = new RegExp("^.+ .+$");
+        var regexPhone = new RegExp(".*[0-9].*[0-9].*[0-9].*[0-9].*[0-9].*[0-9].*[0-9].*[0-9].*[0-9].*[0-9].*");
         
         var validStreet = regexStreet.test(street);
         var validCity = regexCity.test(city);
@@ -213,6 +216,7 @@
         var validSate = regexState.test(state);
         var validEmail = regexEmail.test(email);
         var validName = regexName.test(yourName);
+        var validPhone = regexPhone.test(phone);
 
         if (validSate) {
             stateEnergyCost=stateEnergyCostLookup[state];
@@ -223,22 +227,20 @@
         //document.getElementById("button-address-next").disabled = !isAdderessValid;
 
         if(!isAdderessValid){
-            document.getElementById("error-message").innerHTML="Please enter a valid address";
+            document.getElementById("error-message").innerHTML="Please enter an address for your dealership";
         }
         else if(!(validEmail)){
-            document.getElementById("error-message").innerHTML="Please enter a valid email address";
+            document.getElementById("error-message").innerHTML="Please enter an email address";
+        }
+        else if(!(validPhone)){
+            document.getElementById("error-message").innerHTML="Please enter a valid phone number";
         }
         else if(!(validName)){
-            document.getElementById("error-message").innerHTML="Please enter your first and last name";
-        }
-        else if(!(validName)){
-            document.getElementById("error-message").innerHTML="Please enter your name";
+            document.getElementById("error-message").innerHTML="Please enter the name of the dealership";
         }
         else {
-
             document.getElementById("div-section-address").hidden = true;
             document.getElementById("div-section-form").hidden = false;
-
         }
     }
 
@@ -331,11 +333,8 @@
         document.getElementById("output-cost").value=formatter.format(totalCost);
         document.getElementById("output-carbon").value=totalCarbonOffsetTons.toLocaleString();
         document.getElementById("output-savings").value=formatter.format(totalAnnualElectricitySavings);
-        document.getElementById("output-tax-solar").value=formatter.format(totalTaxCreditOnSolar);
-        document.getElementById("output-tax-depreciation").value=formatter.format(totalDepreciationTaxBenefit);
         document.getElementById("output-tax-total").value=formatter.format(totalTaxBenefits);
         document.getElementById("output-netcost").value=formatter.format(totalNetCostAfterTaxBenefits);
-        document.getElementById("output-years").value=totalSimplePaybackYears.toLocaleString();
         document.getElementById("output-25years").value=formatter.format(totalElectricitySavings25Year);
     }
 
@@ -349,6 +348,14 @@
 
         addressStr = street + ', ' + city + ', ' + state + ' ' + zip;
 
+        var outPvSize = document.getElementById("output-pvsize").value;
+        var outCost = document.getElementById("output-cost").value;
+        var outCarbon = document.getElementById("output-carbon").value;
+        var outSavings = document.getElementById("output-savings").value;
+        var outTaxTotal = document.getElementById("output-tax-total").value;
+        var outNetCost = document.getElementById("output-netcost").value;
+        var outTfYears = document.getElementById("output-25years").value;
+
         var templateParams = {
             name: yourName,
             email: email,
@@ -360,6 +367,14 @@
             chargers: chargersNumberSpaces,
             rooftopsqft: rooftopTotalSquareFeet,
             rooftoppercent: rooftopPercentageAvailable,
+            phone: phone,
+            outPvSize: outPvSize,
+            outCost: outCost,
+            outCarbon: outCarbon,
+            outSavings: outSavings,
+            outTaxTotal: outTaxTotal,
+            outNetCost: outNetCost,
+            outTfYears: outTfYears,
         };
         emailjs.init("user_whFAArlovqbTEMG0eijLf");
         emailjs.send('test-gmail', 'template_ahhaukh', templateParams)
