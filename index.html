@@ -138,10 +138,8 @@
                             <input placeholder="Enter percentage" type="number" id="input-form-percentage"/>
                         </div>
                     </div>
-                </div>
-
-                <div class="column middlecol">
-                    <img src="images/Line.png"/>
+                    <br/>
+                    <br/>
                 </div>
 
                 <div class="column">
@@ -239,12 +237,12 @@
         yourName = document.getElementById("input-address-name").value;
         phone = document.getElementById("input-address-phone").value;
 
-        var regexStreet = new RegExp("^.+$");
+        var regexStreet = new RegExp("^.+\ .+$");
         var regexCity = new RegExp("^.+$");
         var regexZip = new RegExp("^[0-9]{5}$");
         var regexState = new RegExp("^[A-Z][A-Z]$");
         var regexEmail = new RegExp("^.+@.+\..+$");
-        var regexName = new RegExp("^.+ .+$");
+        var regexName = new RegExp("^.+$");
         var regexPhone = new RegExp(".*[0-9].*[0-9].*[0-9].*[0-9].*[0-9].*[0-9].*[0-9].*[0-9].*[0-9].*[0-9].*");
         
         var validStreet = regexStreet.test(street);

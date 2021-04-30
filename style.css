@@ -128,8 +128,7 @@ body {
 
 .column {
   float: left;
-  width: 49%;
-  height: 600px;
+  width: 50%;
 }
 
 .middlecol {
@@ -142,7 +141,7 @@ body {
   clear: both;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   .column {
     width: 100%;
   }
