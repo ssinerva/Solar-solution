@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Solar Solution</title>
+<link rel="stylesheet" type="text/css" href="/style.css/style.css">
+<script src="/Users/David/Documents/Solar-Solution/myscript.js/script.js"></script>
+</head>
+
+
+<body>
+   
+    <div class="hero-section">
+        <img src="/images/Audi Logo.png">
+    </div>
+
+    <div class="header1">
+        <h2> Is solar right for my dealership?</h2></div>
+   
+
+
+
+        <p id="error-message"></p> 
+        <br/>
+    </div>
+</div>
+
+
+<div id="div-section-form">
+    <div class="rectangle">
+    <br/>
+
+    <div class="row">
+<div class="column">
+   <div class="subheader">
+    <h3> What are you interested in?
+        <br>(select all that apply)<h3>
+    </div>
+    <br/>
+    
+    <div class="select-section">
+    <input type="checkbox" id="checkbox-chargers" onclick="doCalculations()">EV Chargers</input> 
+    <br/>
+    <div id="div-form-chargingstations" hidden>
+        <div>How many units</div>
+        <input id="input-form-chargingstations" placeholder="Select Number" type="number" />
+    </div>  
+    <br/>
+    <input type="checkbox" id="checkbox-canopies" onclick="doCalculations()">Solar Canopies</input> 
+    <br/>
+    <div id="div-form-canopies" hidden>
+        <div> How many parking spaces </div>
+        <input id="input-form-canopies" placeholder="Select Number" type="number" />
+    </div>
+    <br/>
+    <input type="checkbox" id="checkbox-rooftop" onclick="doCalculations()">Rooftop Solar</input> 
+    <br/>  
+    <div id="div-form-rooftop" hidden>
+        <div>What is your approximate rooftop area</div>
+        <div>(square feet)</div>
+        <input placeholder="Enter sqft" type="number" id="input-form-sqft"/>
+        <div>Approximately what percentage of above area is available for solar</div>
+        <input placeholder="Enter percentage" type="number" id="input-form-percentage"/>
+    </div>
+</div>
+</div>
+
+
+
+<div class="column">
+    <div class="subheader">
+        <h3> Your Solar Solution*</h3>
+        </div>
+<br/>  
+<br/>
+<div id=label>Annual Electricity Savings</div><input type="text" id="output-savings" disabled/>
+<div id=label>Total Electricity Savings Over 25 Years of Warrantied Life</div><input type="text" id="output-25years" disabled/>
+<div id=label>Annual Carbon Offset (Tons of CO2)</div><input type="text" id="output-carbon" disabled/>
+<div id=label>Total Cost</div><input type="text" id="output-cost" disabled/>
+<div id=label>Total Tax Benefits (Tax Credit and Depreciation)</div><input type="text" id="output-tax-total" disabled/>
+<div id=label>Net Cost After Tax Benefits</div><input type="text" id="output-netcost" disabled/>        
+<div id=label>Total Solar PV Size (kW)</div><input type="text" id="output-pvsize" disabled/>
+<br/>
+
+<div class="button">
+
+    <input type="button" onclick="window.print()" value="Print"/>
+    <input type="button" id='button-email' value="Get In Touch" onclick="sendEmail()"/>
+    <div id="p-thanks" hidden>Thank you! Someone from our team will be in touch with you shortly!</div>
+
+    <br/>
+
+
+</div>
+</div>
+</div>
+<h4><em>*This is a preliminary evaluation, subject to detailed design & engineer</em></h4>
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
