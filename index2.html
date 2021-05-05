@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
-<html>
+<html class="solution">
 <head>
 <title>Solar Solution</title>
-<link rel="stylesheet" type="text/css" href="/style.css/style.css">
+<link rel="stylesheet" type="text/css" href="/style.css/style1.css">
 <script src="/Users/David/Documents/Solar-Solution/myscript.js/script.js"></script>
 </head>
 
@@ -13,6 +12,8 @@
     <div class="hero-section">
         <img src="/images/Audi Logo.png">
     </div>
+
+  
 
     <div class="header1">
         <h2> Is solar right for my dealership?</h2></div>
@@ -62,6 +63,7 @@
         <div>Approximately what percentage of above area is available for solar</div>
         <input placeholder="Enter percentage" type="number" id="input-form-percentage"/>
     </div>
+ 
 </div>
 </div>
 
@@ -82,10 +84,21 @@
 <div id=label>Total Solar PV Size (kW)</div><input type="text" id="output-pvsize" disabled/>
 <br/>
 
-<div class="button">
-
-    <input type="button" onclick="window.print()" value="Print"/>
+<div class="row">
+<div class="small-column">
+<div class="button-email">
     <input type="button" id='button-email' value="Get In Touch" onclick="sendEmail()"/>
+    </div>
+
+    <div class="button-print">
+        <input type="button" id='button-print' onclick="window.print()" value="Print"/>
+        </div>
+        </div>
+    </div>
+  
+
+
+   
     <div id="p-thanks" hidden>Thank you! Someone from our team will be in touch with you shortly!</div>
 
     <br/>
@@ -98,7 +111,6 @@
 
 
 </body>
-
 
 
 
