@@ -257,10 +257,32 @@ transition-duration: 0.5s;
   text-align: inherit;
 }
 
-#checkbox-chargers {
+
+#checkbox-rooftop {
   height: 20px;
   width: 20px;
-margin-right: 10px;
+  margin-right: 10px;
+}
+
+#div-form-rooftop {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+#input-form-sqft {
+  padding: 5px;
+  margin-top: 3px;
+  margin-bottom: 15px;
+  border-radius: 3px;
+  border-color:1px black;
+}
+
+#input-form-percentage {
+  padding: 5px;
+  margin-top: 3px;
+  margin-bottom: 15px;
+  border-radius: 3px;
+  border-color:1px black;
 }
 
 #checkbox-canopies {
@@ -269,11 +291,14 @@ margin-right: 10px;
   margin-right: 10px;
 }
 
-#checkbox-rooftop {
+#checkbox-chargers {
+  padding-left: 20px;
   height: 20px;
   width: 20px;
-  margin-right: 10px;
+margin-right: 10px;
 }
+
+
 
 #output-savings {
   font-size: 16px;
@@ -385,9 +410,15 @@ margin-left: -60px;
   margin-right: 70px;
 }
 
+.p-thanks {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: rgb(240, 250, 255);
+}
 
 
 h4 {
+  margin-top: 40px;
   font-size: 14px;
   font-weight: normal;
   font-stretch: normal;
@@ -399,9 +430,21 @@ h4 {
 
 
 .footer-section {
-  width: 30px;
-  align-items: right;
+ position: relative;
+  margin-top: 40px;
+  background-color: rgb(255, 255, 255);
+  opacity: 0.6;
+  width: 100vw;
+  height: 40px;
+margin-left: -5px;
+margin-bottom: -10px!important;
+}
+
+.renewvia-logo {
+  opacity:1;
+max-height: 40px;
+float: left;
+padding: 0px;
 }
 
 /* Contact Page */
-
