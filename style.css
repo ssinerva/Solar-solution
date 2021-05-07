@@ -200,7 +200,7 @@ transition-duration: 0.5s;
 .rectangle {
 
   margin: 55.2px 63px 73.5px;
-  padding: 40px 36px 11.5px 80px;
+  padding: 40px 36px 11.5px 30px;
   opacity: 0.94;
   border-radius: 5px;
   box-shadow: 2px 2px 4px 0 rgba(255, 255, 255, 0.5);
@@ -209,7 +209,7 @@ transition-duration: 0.5s;
 
 .row {
   text-align: left;
-  padding-left: 60px;
+  padding-left: 40px;
 }
 
 .column {
@@ -292,21 +292,48 @@ transition-duration: 0.5s;
 }
 
 #checkbox-chargers {
-  padding-left: 20px;
   height: 20px;
   width: 20px;
 margin-right: 10px;
+margin-bottom: 20px;
+margin-left: 50px;
 }
 
 
 
+
+* {
+  box-sizing: border-box;
+}
+
+.inner-column {
+  display: flex;
+  flex-flow: column;
+  float: left;
+  width: 200px;
+  padding: 10px 5px 0px 5px;
+}
+
+/* Clearfix (clear floats) */
+.row2::after {
+  display: flex;
+  -ms-flex-flow: column;
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+
+
 #output-savings {
+  background-color: #f0f0f0;
   font-size: 16px;
   padding: 5px;
   margin-top: 3px;
   margin-bottom: 15px;
   border-radius: 3px;
-  border-color:1px black;
+  border: 1px;
 }
 
 #label {
@@ -315,63 +342,68 @@ width: 500px;
 
 
 #output-25years  {
+  background-color: #f0f0f0;
   font-size: 16px;
   padding: 5px;
   margin-top: 3px;
   margin-bottom: 15px;
   border-radius: 3px;
-  border-color:1px black;
+  border: 1px;
 }
 
  #output-carbon  {
+  background-color: #f0f0f0;
   font-size: 16px;
   padding: 5px;
   margin-top: 3px;
   margin-bottom: 15px;
   border-radius: 3px;
-  border-color:1px black;
+  border: 1px;
 }
 
 #output-cost  {
+  background-color: #f0f0f0;
   font-size: 16px;
   padding: 5px;
   margin-top: 3px;
   margin-bottom: 15px;
   border-radius: 3px;
-  border-color:1px black;
+  border: 1px;
 }
 
 #output-tax-total  {
+  background-color: #f0f0f0;
   font-size: 16px;
   padding: 5px;
   margin-top: 3px;
   margin-bottom: 15px;
   border-radius: 3px;
-  border-color:1px black;
+  border: 1px;
 }
 
 #output-netcost  {
+  background-color: #f0f0f0;
   font-size: 16px;
   padding: 5px;
   margin-top: 3px;
   margin-bottom: 15px;
   border-radius: 3px;
-  border-color:1px black;
+  border: 1px;
 }
 
 #output-pvsize  {
+  background-color: #f0f0f0;
   font-size: 16px;
   padding: 5px;
   margin-top: 3px;
   margin-bottom: 15px;
   border-radius: 3px;
-  border-color:1px black;
+  border: 1px;
 }
 
 
-.row {
-  text-align: left;
-  padding-left: 60px;
+.row2 {
+  text-align: left; 
 }
 
 .small-column {
@@ -397,7 +429,7 @@ width: 500px;
 color:rgb(71, 103, 124);
 padding: 6px 20px 6px 20px;
 font-size: 10pt;
-margin-left: -60px;
+margin-left: -40px;
 }
 
 
@@ -407,7 +439,7 @@ margin-left: -60px;
   color:rgb(71, 103, 124);
   padding: 6px 20px 6px 20px;
   font-size: 10pt;
-  margin-right: 70px;
+  margin-right: 80px;
 }
 
 .p-thanks {
@@ -425,7 +457,7 @@ h4 {
   font-style: normal;
   line-height: normal;
   letter-spacing: 0.37px;
-  color: #4a4a4a;
+  color: #dadada;
 }
 
 
