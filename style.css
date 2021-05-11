@@ -1,5 +1,5 @@
 body {
-  background-image: url('/images/Solar-bg-img.png');
+  background-image: url('/images/Bg-img-2.png');
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -18,7 +18,7 @@ body {
   }
   
 .header1 h2{
-  float: center;
+ 
     height: 61px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 5vw;
@@ -32,9 +32,11 @@ body {
 
 
 .subtext1 {
+display: inline-flex;
+  overflow: wrap;
   position: relative;
   height: 66px;
-  margin: 10px 37px 55px 38px;
+  margin: 10px 37px 15px 38px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.6vw;
   font-weight: normal;
@@ -47,35 +49,33 @@ body {
 }
 
 .subtext1 p {
-display: inline-block;
+  float: center;
 width: 600px;
 line-height: 1em;
 color: rgb(255, 255, 255);
 }
 
-.column1 {
-  float: right;
-  width: 52%;
-
+@media screen and (max-width: 600px) {
+  .subtext1 p  {
+    font-size: 2.5vw;
+    width: auto;
+  }
 }
 
-.column2 {
-  float: right;
-  width: 17%;
 
-}
+ 
 
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+#div-section-address {
+float: center;
+margin-top: 50px;
+
 }
 
 #input-address-name {
-  font-size: 16px;
-  padding: 9px;
+  padding-bottom: 1em;
+  font-size: 1em;
+  padding: 0.60em;
   border: 2px darkslategrey;
-  margin-bottom: 10px;
   border-radius: 3px;
   opacity: 0.9;
 }
@@ -86,11 +86,102 @@ transition-duration: .5s;}
 
 
 
+.column1 {
+  float: right;
+  width: 52%;
+
+}
+
+.column2 {
+  float: right;
+  width: 12%;
+
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+@media screen and (max-width: 1610px) {
+  .column1, input[type=submit] {
+     width: 51%;
+     margin-top: 0;
+   }
+ }
+
+ @media screen and (max-width: 1610px) {
+  .column2, input[type=submit] {
+     width: 14%;
+     margin-top: 0;
+   }
+ }
+
+ @media screen and (max-width: 1410px) {
+  .column1, input[type=submit] {
+     width: 50%;
+     margin-top: 0;
+   }
+ }
+
+ @media screen and (max-width: 1410px) {
+  .column2, input[type=submit] {
+     width: 18%;
+     margin-top: 0;
+   }
+ }
+
+ @media screen and (max-width: 1130px) {
+  .column1, input[type=submit] {
+     width: 50%;
+     margin-top: 0;
+   }
+ }
+
+ @media screen and (max-width: 1130px) {
+  .column2, input[type=submit] {
+     width: 23%;
+     margin-top: 0;
+   }
+ }
+
+
+ @media screen and (max-width: 900px) {
+  .column1, .column2, input[type=submit] {
+    
+    width: 100%;
+     margin-top: 0;
+   }
+ }
+
+ 
+
+
+
+
+
+
+
+@media screen and (max-width: 600px) {
+ .column1, .column2, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+    float: left;
+  }
+}
+
+
+
+
+
 #input-address-street {
-  font-size: 16px;
-  padding: 9px;
+  font-size: 1em;
+  padding: 0.60em;
   border: 2px darkslategrey;
-  margin-bottom: 10px;
+  margin-bottom: 0.5em;
   border-radius: 3px;
   opacity: 0.9;
 }
@@ -101,10 +192,10 @@ transition-duration: 0.5s;
 }
 
 #input-address-city {
-  font-size: 16px;
-  padding: 9px;
+  font-size: 1em;
+  padding: 0.60em;
   border: 2px darkslategrey;
-  margin-bottom: 10px;
+  margin-bottom: 0.5em;
   border-radius: 3px;
   opacity: 0.9;
 }
@@ -116,11 +207,10 @@ transition-duration: 0.5s;
 }
 
 #input-address-state {
-  font-size: 16px;
-  color: grey;
-  padding: 9px;
+  font-size: 1em;
+  padding: 0.60em;
   border: 2px darkslategrey;
-  margin-bottom: 10px;
+  margin-bottom: 0.5em;
   border-radius: 3px;
   opacity: 0.9;
 }
@@ -131,10 +221,10 @@ transition-duration: 0.5s;
   }
 
 #input-address-zip {
-  font-size: 16px;
-  padding: 9px;
+  font-size: 1em;
+  padding: 0.60em;
   border: 2px darkslategrey;
-  margin-bottom: 10px;
+  margin-bottom: 0.5em;
   border-radius: 3px;
   opacity: 0.9;
 }
@@ -146,10 +236,10 @@ transition-duration: 0.5s;
 
 
 #input-address-email {
-  font-size: 16px;
-  padding: 9px;
+  font-size: 1em;
+  padding: 0.60em;
   border: 2px darkslategrey;
-  margin-bottom: 10px;
+  margin-bottom: 0.5em;
   border-radius: 3px;
   opacity: 0.9;
 }
@@ -160,10 +250,10 @@ transition-duration: 0.5s;
   }
 
 #input-address-phone {
-  font-size: 16px;
-  padding: 9px;
+  font-size: 1em;
+  padding: 0.60em;
   border: 2px darkslategrey;
-  margin-bottom: 10px;
+  margin-bottom: 0.5em;
   border-radius: 3px;
   opacity: 0.9;
 }
@@ -174,21 +264,29 @@ transition-duration: 0.5s;
   }
 
 #button-address-next {
-  color: white;
-  background-color: rgb(71, 103, 124);
-  font-size: 18px;
+  color: rgb(0, 0, 0);
+  background-color: white;
+  font-size: 1.3vw;
   padding: 10px 28px 10px 28px;
   border: 2px darkslategrey;
-  margin-bottom: 10px;
+  margin-bottom: 0.5em;
   border-radius: 3px;
  
 }
 
 #button-address-next:hover{
-  
+  color: rgb(255, 255, 255);
   transition-duration: 0.5s; 
   background-color: rgb(115, 164, 197);
+  cursor: pointer;
 }
+
+@media screen and (max-width: 600px) {
+  #button-address-next {
+    font-size: 1em;
+  }
+}
+  
 
 
 
@@ -213,6 +311,7 @@ transition-duration: 0.5s;
 }
 
 .column {
+  position: relative;
   float: left;
   width: 50%;
 }
@@ -226,6 +325,7 @@ transition-duration: 0.5s;
 @media screen and (max-width: 600px) {
   .column {
     width: 100%;
+  
 
   }
 }
@@ -299,19 +399,51 @@ margin-bottom: 20px;
 margin-left: 50px;
 }
 
-
+label {
+  word-wrap: break-word;
+}
 
 
 * {
   box-sizing: border-box;
 }
 
-.inner-column {
+.inner-column1 {
   display: flex;
   flex-flow: column;
   float: left;
   width: 200px;
   padding: 10px 5px 0px 5px;
+}
+
+.inner-column2 {
+  display: flex;
+  flex-flow: column;
+  float: left;
+  width: 200px;
+  padding: 10px 5px 0px 5px;
+}
+
+.inner-column3 {
+  display: flex;
+  flex-flow: column;
+  float: left;
+  width: 200px;
+  padding: 10px 5px 0px 5px;
+}
+
+.inner-column4 {
+  display: flex;
+  flex-flow: column;
+  float: left;
+  width: 200px;
+  padding: 10px 5px 0px 5px;
+}
+
+@media screen and (max-width: 1000px) {
+.inner-column3, .inner-column4 {
+  visibility: hidden;
+} 
 }
 
 /* Clearfix (clear floats) */
@@ -426,20 +558,40 @@ width: 500px;
 }
 
 #button-print{
-color:rgb(71, 103, 124);
+color:rgb(0, 0, 0);
 padding: 6px 20px 6px 20px;
 font-size: 10pt;
 margin-left: -40px;
+margin-bottom: 5px;
+border-radius: 4px;
+border: 1px;
 }
 
+#button-print:hover {
+  transition-duration: 0.5s; 
+  background-color: rgb(115, 164, 197);
+  color: white;
+  cursor: pointer;
+}
 
 
 #button-email {
   float: right;
-  color:rgb(71, 103, 124);
+  color:rgb(0, 0, 0);
   padding: 6px 20px 6px 20px;
   font-size: 10pt;
   margin-right: 80px;
+  margin-bottom: 5px;
+  border: 1px;
+  border-radius: 4px;
+}
+#button-email:hover {
+  transition-duration: 0.5s; 
+  background-color: rgb(115, 164, 197);
+  border-radius: 4px;
+  padding: 6px 20px 6px 20px;
+  color: white;
+  cursor: pointer;
 }
 
 .p-thanks {
@@ -461,6 +613,11 @@ h4 {
 }
 
 
+#error-message {
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(255, 187, 0);
+}
+
 .footer-section {
  position: relative;
   margin-top: 40px;
@@ -472,11 +629,114 @@ margin-left: -5px;
 margin-bottom: -10px!important;
 }
 
-.renewvia-logo {
+
+
+
+
+
+/* Contact Page */
+
+
+.rectangle1 {
+  height: auto;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-bottom: 100px;
+  padding-top: 20px;
+  padding-bottom: 70px;
+  opacity: 0.7;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px 0 rgba(255, 255, 255, 0.5);
+  background-color: #ffffff;
+}
+
+
+.rectangle, h7 {
+  color: black;
+  font-size: 1.3vw;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 200;
+  word-wrap: break-word;
+}
+
+
+@media screen and (max-width:900px) {
+  .rectangle1, h7 {
+    font-size: 1em;
+    
+  }
+}
+
+
+@media screen and (max-width:900px) {
+  .rectangle1 {
+    float: left;
+    width: 400px;
+    
+  }
+}
+
+@media screen and (max-width:600px) {
+  .rectangle1 {
+    margin-left: 100px;
+    width: 300px;
+    padding-bottom: 100px;
+    
+  }
+}
+
+
+@media screen and (max-width:600px) {
+  .rectangle1 h7 {
+    font-size: 1.5em;
+
+  }
+}
+
+
+.contact-content{
+  display: flexbox;
+  background-color:#ffffff;
+    text-align:center;
+    padding:10px;
+    margin-left:30vw;
+    margin-right:30vw;
+    border-radius: 4px;
+    opacity: 0.7;
+}
+
+.logo {
+float: center;
+max-height: 60px;
+padding: 0px;
+}
+
+.contact-content h5{
+ line-height: 1.4em;
+}
+
+
+a:-webkit-any-link {
+   text-decoration: none!important;
+   color: black;
+ }
+
+ a:-webkit-any-link:hover {
+   color: rgb(115, 164, 197);
+   cursor: pointer;
+ }
+
+
+ @media screen and (max-width:1200px) {
+   .contact-content {
+     margin-top:300px;
+     float: center;
+   }
+ }
+
+ .renewvia-logo {
   opacity:1;
 max-height: 40px;
 float: left;
 padding: 0px;
 }
-
-/* Contact Page */
