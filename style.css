@@ -84,6 +84,14 @@ margin-top: 50px;
 opacity:initial;
 transition-duration: .5s;}
 
+@media screen and (max-width: 400px) {
+  #input-address-name {
+  float:left;
+  margin-left:40px;
+  margin-bottom:10px;
+  }
+}
+
 
 
 .column1 {
@@ -149,19 +157,42 @@ transition-duration: .5s;}
  }
 
 
- @media screen and (max-width: 900px) {
-  .column1, .column2, input[type=submit] {
+ @media screen and (max-width: 800px) {
+  .column1, input[type=submit] {
     
-    width: 100%;
+    width: 50%;
      margin-top: 0;
    }
  }
 
- 
+ @media screen and (max-width: 800px) {
+  .column2, input[type=submit] {
+    
+    width: 30%;
+     margin-top: 0;
+   }
+ }
+
+
+ @media screen and (max-width: 7000px) {
+  .column1,   .column2,input[type=submit] {
+    width: auto;
+    float: center;
+     margin-top: 0;
+     margin-left: 50px;
+   }
+ }
 
 
 
-
+ @media screen and (max-width: 600px) {
+  #input-address-name, input[type=submit] {
+     width: 51.5%;
+     margin-top: 0;
+     float: left;
+     margin-left: 90px;
+   }
+ }
 
 
 
@@ -305,6 +336,14 @@ transition-duration: 0.5s;
   background-color: #ffffff;
 }
 
+@media  screen and (max-width: 600px) {
+  .rectangle {
+    width: 80%;
+   float: left;
+  }
+  
+}
+
 .row {
   text-align: left;
   padding-left: 40px;
@@ -316,13 +355,31 @@ transition-duration: 0.5s;
   width: 50%;
 }
 
+@media screen and (max-width: 800px) {
+ .column, input[type=submit] {
+     width: 50%;
+     margin-top: 0;
+     margin-left: 0;
+   }
+ }
+
+ @media screen and (max-width: 700px) {
+  .column, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+ margin-left: 0;
+    }
+  }
+ 
+
+
 .row:after {
   content: "";
   display: table;
   clear: both;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   .column {
     width: 100%;
   
@@ -330,7 +387,13 @@ transition-duration: 0.5s;
   }
 }
 
-
+@media screen and (max-width: 700px) {
+.column, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+    float: left;
+}
+}
 
 .subheader h3 {
   width: 251px;
@@ -416,6 +479,16 @@ label {
   padding: 10px 5px 0px 5px;
 }
 
+
+
+
+  @media screen and (max-width:800px) {
+    .inner-column1 {
+  width: 100%;
+padding-right: 130px;
+    } 
+    }
+
 .inner-column2 {
   display: flex;
   flex-flow: column;
@@ -423,6 +496,12 @@ label {
   width: 200px;
   padding: 10px 5px 0px 5px;
 }
+
+@media screen and (max-width: 800px) {
+  .inner-column2 {
+    display: none;
+  } 
+  }
 
 .inner-column3 {
   display: flex;
@@ -440,10 +519,10 @@ label {
   padding: 10px 5px 0px 5px;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 800px) {
 .inner-column3, .inner-column4 {
-  visibility: hidden;
-} 
+  display: none;
+  } 
 }
 
 /* Clearfix (clear floats) */
@@ -455,25 +534,33 @@ label {
   display: table;
 }
 
-
-
-
-#output-savings {
-  background-color: #f0f0f0;
-  font-size: 16px;
-  padding: 5px;
-  margin-top: 3px;
-  margin-bottom: 15px;
-  border-radius: 3px;
-  border: 1px;
-}
-
 #label {
 width: 500px;
 }
 
 
-#output-25years  {
+.subheader1 {
+  width: 251px;
+  margin: 0 30px 3px 0;
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.48px;
+  color: #000000;
+  text-align: left;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+  .subheader1 h3 {
+   
+    font-size: 18px;
+  }
+}
+  
+#output-savings, #output-25years, #output-carbon, #output-cost, #output-tax-total, #output-netcost, #output-pvsize {
   background-color: #f0f0f0;
   font-size: 16px;
   padding: 5px;
@@ -483,60 +570,19 @@ width: 500px;
   border: 1px;
 }
 
- #output-carbon  {
-  background-color: #f0f0f0;
-  font-size: 16px;
-  padding: 5px;
-  margin-top: 3px;
-  margin-bottom: 15px;
-  border-radius: 3px;
-  border: 1px;
-}
 
-#output-cost  {
-  background-color: #f0f0f0;
-  font-size: 16px;
-  padding: 5px;
-  margin-top: 3px;
-  margin-bottom: 15px;
-  border-radius: 3px;
-  border: 1px;
-}
+@media screen and (max-width: 800px) {
+  #label {
+    font-size: 15px;
 
-#output-tax-total  {
-  background-color: #f0f0f0;
-  font-size: 16px;
-  padding: 5px;
-  margin-top: 3px;
-  margin-bottom: 15px;
-  border-radius: 3px;
-  border: 1px;
+  }
 }
-
-#output-netcost  {
-  background-color: #f0f0f0;
-  font-size: 16px;
-  padding: 5px;
-  margin-top: 3px;
-  margin-bottom: 15px;
-  border-radius: 3px;
-  border: 1px;
-}
-
-#output-pvsize  {
-  background-color: #f0f0f0;
-  font-size: 16px;
-  padding: 5px;
-  margin-top: 3px;
-  margin-bottom: 15px;
-  border-radius: 3px;
-  border: 1px;
-}
-
+  
 
 .row2 {
   text-align: left; 
 }
+
 
 .small-column {
   float: left;
@@ -550,7 +596,7 @@ width: 500px;
 }
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   .small-column {
     width: 100%;
 
@@ -593,6 +639,57 @@ border: 1px;
   color: white;
   cursor: pointer;
 }
+
+@media screen and (max-width: 800px) {
+  .button-email {
+    width: 100%;
+    margin-left: 70px
+
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .button-email {
+    width: 100%;
+    margin-left: -75px
+
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .button-email {
+    width: 100%;
+    margin-left: 0px
+
+  }
+}
+
+
+@media screen and (max-width: 800px) {
+  .button-print {
+    width: 100%;
+    margin-left: 55px;
+
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .button-print {
+    width: 100%;
+    margin-left: 0px;
+
+  }
+}
+
+
+@media screen and (max-width: 400px) {
+  .button-print {
+    
+    margin-left: 0px;
+
+  }
+}
+
 
 .p-thanks {
   font-family: Arial, Helvetica, sans-serif;
@@ -637,7 +734,7 @@ margin-bottom: -10px!important;
 /* Contact Page */
 
 
-.rectangle1 {
+.rectangle2 {
   height: auto;
   margin-left: 200px;
   margin-right: 200px;
@@ -650,8 +747,7 @@ margin-bottom: -10px!important;
   background-color: #ffffff;
 }
 
-
-.rectangle, h7 {
+.rectangle2, h7 {
   color: black;
   font-size: 1.3vw;
   font-family: Arial, Helvetica, sans-serif;
@@ -660,16 +756,15 @@ margin-bottom: -10px!important;
 }
 
 
-@media screen and (max-width:900px) {
-  .rectangle1, h7 {
+@media screen and (max-width:800px) {
+  .rectangle2, h7 {
     font-size: 1em;
     
   }
 }
 
-
-@media screen and (max-width:900px) {
-  .rectangle1 {
+@media screen and (max-width:800px) {
+  .rectangle2 {
     float: left;
     width: 400px;
     
@@ -677,18 +772,28 @@ margin-bottom: -10px!important;
 }
 
 @media screen and (max-width:600px) {
-  .rectangle1 {
+  .rectangle2 {
     margin-left: 100px;
     width: 300px;
-    padding-bottom: 100px;
+    padding-bottom: 10px;
     
   }
 }
 
 
 @media screen and (max-width:600px) {
-  .rectangle1 h7 {
+  .rectangle2 h7 {
     font-size: 1.5em;
+
+  }
+}
+
+
+@media screen and (max-width:500px) {
+  .rectangle2 {
+    padding-bottom: 100px;
+    font-size: 1.5em;
+    margin-left: 30px;
 
   }
 }
@@ -734,9 +839,37 @@ a:-webkit-any-link {
    }
  }
 
+ @media screen and (max-width:800px) {
+  .contact-content {
+    width: 40%;
+    margin-top:300px;
+    margin-left: 260px;
+
+  }
+}
+
+@media screen and (max-width:500px) {
+  .contact-content {
+    width: 100%;
+    margin-top:400px;
+    margin-left: 0px;
+  }
+}
+
  .renewvia-logo {
   opacity:1;
 max-height: 40px;
 float: left;
 padding: 0px;
+}
+
+@media screen and (max-width:500px) {
+  .renewvia-logo {
+    width: 10px;
+    height: 10px;
+    margin-top:0px;
+    padding-top: 0px;
+    margin-left: 150px;
+
+  }
 }
