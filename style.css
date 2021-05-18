@@ -174,7 +174,7 @@ transition-duration: .5s;}
  }
 
 
- @media screen and (max-width: 7000px) {
+ @media screen and (max-width: 700px) {
   .column1,   .column2,input[type=submit] {
     width: auto;
     float: center;
