@@ -1,13 +1,12 @@
-body {
-  background-image: url('/images/Bg-img-2.png');
-  background-repeat: no-repeat!important;
+body,html {
+  height: 100%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif
-   }
+  font-family: Arial, Helvetica, sans-serif;
+}
 
 
 
@@ -32,10 +31,9 @@ body {
 
 
 .subtext1 {
-display: inline-flex;
+  display: inline-flex;
   overflow: wrap;
   position: relative;
-  height: 66px;
   margin: 0px 37px 15px 38px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.6vw;
@@ -50,9 +48,9 @@ display: inline-flex;
 
 .subtext1 p {
   float: center;
-width: 600px;
-line-height: 1em;
-color: rgb(255, 255, 255);
+  width: 600px;
+  line-height: 1em;
+  color: rgb(255, 255, 255);
 }
 
 @media screen and (max-width: 600px) {
@@ -62,14 +60,25 @@ color: rgb(255, 255, 255);
   }
 }
 
-
- 
-
 #div-section-address {
-float: center;
-margin-top: 100px;
-
+  background-image: url('images/Bg-img-2.png');
+  background-repeat: no-repeat!important;
+  height: 100%;
+  float: center;
 }
+
+#div-section-form {
+  background-image: url('images/bg-img.png');
+  background-repeat: no-repeat!important;
+  height: 100%;
+}
+
+#div-section-thanks {
+  background-image: url('images/bg-img.png');
+  background-repeat: no-repeat!important;
+  height: 100%;
+}
+
 
 #input-address-name {
   padding-bottom: 1em;
@@ -420,27 +429,12 @@ transition-duration: 0.5s;
   text-align: inherit;
 }
 
-
-#checkbox-rooftop {
-  height: 20px;
-  width: 20px;
-  margin-right: 10px;
-}
-
 #div-form-rooftop {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
 }
 
-#input-form-sqft {
-  padding: 5px;
-  margin-top: 3px;
-  margin-bottom: 15px;
-  border-radius: 3px;
-  border-color:1px black;
-}
-
-#input-form-percentage {
+.input-form {
   padding: 5px;
   margin-top: 3px;
   margin-bottom: 15px;
@@ -452,14 +446,21 @@ transition-duration: 0.5s;
   height: 20px;
   width: 20px;
   margin-right: 10px;
+  margin-bottom: 20px;
 }
 
 #checkbox-chargers {
   height: 20px;
   width: 20px;
-margin-right: 10px;
-margin-bottom: 20px;
-margin-left: 50px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+
+#checkbox-rooftop {
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+  margin-bottom: 20px;
 }
 
 label {
@@ -716,18 +717,17 @@ h4 {
 }
 
 .footer-section {
- position: relative;
-  margin-top: 40px;
+  position: relative;
   background-color: rgb(255, 255, 255);
   opacity: 0.6;
   width: 100vw;
   height: 40px;
-margin-left: -5px;
-margin-bottom: -10px!important;
+  margin-left: -5px;
 }
 
-
-
+#section-address .footer-section {
+  bottom: 0;
+}
 
 
 
