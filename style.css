@@ -11,15 +11,16 @@ body,html {
 
 
 .hero-section {
-    height: 44px;
-    width: 59px;
-    align-items: right;
-  }
-  
+  height: 40px;
+  width: 60px;
+  margin-left: 0.5em;
+  padding-top: 0.5em;
+  align-items: right;
+}
+
 .header1 h2{
- 
-    height: 61px;
-    font-family: Arial, Helvetica, sans-serif;
+  display: inline-block;
+     font-family: Arial, Helvetica, sans-serif;
     font-size: 5vw;
     font-weight: bold;
     font-stretch: normal;
@@ -44,11 +45,12 @@ body,html {
   letter-spacing: 0.48px;
   text-align: center;
   color: #ffffff;
+
 }
 
 .subtext1 p {
   float: center;
-  width: 600px;
+  width: 650px;
   line-height: 1em;
   color: rgb(255, 255, 255);
 }
@@ -63,20 +65,19 @@ body,html {
 #div-section-address {
   background-image: url('images/Bg-img-2.png');
   background-repeat: no-repeat!important;
-  height: 100%;
-  float: center;
+
 }
 
 #div-section-form {
   background-image: url('images/bg-img.png');
   background-repeat: no-repeat!important;
-  height: 100%;
+  
 }
 
 #div-section-thanks {
   background-image: url('images/bg-img.png');
   background-repeat: no-repeat!important;
-  height: 100%;
+
 }
 
 
@@ -92,6 +93,7 @@ body,html {
 #input-address-name:hover {
 opacity:initial;
 transition-duration: .5s;}
+
 
 @media screen and (max-width: 400px) {
   #input-address-name {
@@ -215,8 +217,6 @@ transition-duration: .5s;}
 
 
 
-
-
 #input-address-street {
   font-size: 1em;
   padding: 0.60em;
@@ -309,7 +309,8 @@ transition-duration: 0.5s;
   font-size: 1.3vw;
   padding: 10px 28px 10px 28px;
   border: 2px darkslategrey;
-  margin-bottom: 0.5em;
+  margin-bottom: 3em;
+
   border-radius: 3px;
  float: center;
 }
@@ -331,14 +332,13 @@ transition-duration: 0.5s;
 
 
 
-
 /* Calculator Page */
 
 
 .rectangle {
 
-  margin: 55.2px 63px 73.5px;
-  padding: 40px 36px 11.5px 30px;
+  margin: 0px 63px 73.5px;
+  padding: 40px 36px 30px 30px;
   opacity: 0.94;
   border-radius: 5px;
   box-shadow: 2px 2px 4px 0 rgba(255, 255, 255, 0.5);
@@ -349,13 +349,14 @@ transition-duration: 0.5s;
   .rectangle {
     width: 80%;
    float: left;
+   padding-bottom: 20px;
   }
   
 }
 
 .row {
   text-align: left;
-  padding-left: 40px;
+  padding-left: 0px;
 }
 
 .column {
@@ -407,7 +408,6 @@ transition-duration: 0.5s;
 .subheader h3 {
   width: 251px;
   margin: 0 30px 3px 0;
-  font-size: 18px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -520,7 +520,7 @@ padding-right: 130px;
   padding: 10px 5px 0px 5px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1010px) {
 .inner-column3, .inner-column4 {
   display: none;
   } 
@@ -539,11 +539,14 @@ padding-right: 130px;
 width: 500px;
 }
 
+.subheader {
+  font-size: 1em;
+}
 
 .subheader1 {
   width: 251px;
   margin: 0 30px 3px 0;
-  font-size: 18px;
+  font-size: 1em;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -604,11 +607,15 @@ width: 500px;
   }
 }
 
-#button-print{
+#button-print {
+  background-color: lavender;
+width: 100%;
+display: inline-block;
+text-transform: uppercase;
 color:rgb(0, 0, 0);
-padding: 6px 20px 6px 20px;
-font-size: 10pt;
-margin-left: -40px;
+padding: 6px 10px 6px 10px;
+font-size: 1.3vw;
+margin-top: 20px;
 margin-bottom: 5px;
 border-radius: 4px;
 border: 1px;
@@ -623,11 +630,14 @@ border: 1px;
 
 
 #button-email {
-  float: right;
+  background-color: lavender;
+  width: 100%;
+  display: inline-block;
+  text-transform: uppercase;
   color:rgb(0, 0, 0);
-  padding: 6px 20px 6px 20px;
-  font-size: 10pt;
-  margin-right: 80px;
+  padding: 6px 10px 6px 10px;
+  font-size: 1.3vw;
+  margin-top: 20px;
   margin-bottom: 5px;
   border: 1px;
   border-radius: 4px;
@@ -700,7 +710,6 @@ border: 1px;
 
 
 h4 {
-  margin-top: 40px;
   font-size: 14px;
   font-weight: normal;
   font-stretch: normal;
@@ -716,19 +725,6 @@ h4 {
   color: rgb(255, 187, 0);
 }
 
-.footer-section {
-  position: relative;
-  background-color: rgb(255, 255, 255);
-  opacity: 0.6;
-  width: 100vw;
-  height: 40px;
-  margin-left: -5px;
-}
-
-#section-address .footer-section {
-  bottom: 0;
-}
-
 
 
 /* Contact Page */
@@ -738,9 +734,9 @@ h4 {
   height: auto;
   margin-left: 200px;
   margin-right: 200px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   padding-top: 20px;
-  padding-bottom: 70px;
+  padding-bottom: 10px;
   opacity: 0.7;
   border-radius: 5px;
   box-shadow: 2px 2px 4px 0 rgba(255, 255, 255, 0.5);
@@ -800,14 +796,16 @@ h4 {
 
 
 .contact-content{
-  display: flexbox;
+  position: relative;
+  float: center;
   background-color:#ffffff;
     text-align:center;
-    padding:10px;
+    padding-bottom:10px;
     margin-left:30vw;
     margin-right:30vw;
     border-radius: 4px;
     opacity: 0.7;
+    top: -30px;
 }
 
 .logo {
@@ -872,4 +870,15 @@ padding: 0px;
     margin-left: 150px;
 
   }
+}
+
+
+.footer-section {
+
+  background-color: rgb(255, 255, 255);
+  opacity: 0.6;
+  width: 100vw;
+  height: auto;
+  padding-top: 10px;
+
 }
