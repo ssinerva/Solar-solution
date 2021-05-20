@@ -7,258 +7,257 @@
     
 <body>
 
-
-<div id='div-section-address'>
-    <title>Solar Solution</title>
-    <div class="hero-section">
-        <img src="images/Audi Logo.png">
-    </div>
-
-
-    <div class="header1">
-        <h2>Solar at My Dealership</h2>
-    </div>
-
-    <div class="subtext1">
-        <p>Solar Energy can drastically reduce your electricity bills, is financially incentivized, and can be easily installed without disrupting your business. Join Audi dealers across the nation as we drive towards a more sustainable future, today. Based on your needs and geographical location, we will calculate your unique solar solution.</p>
-    </div>
-    <br/>
-
-    <input placeholder="Dealership Name"text" id="input-address-name"/>
-    <br/>
-    <br/>
-    <div class="row">
-        <div class="column1">
-            <input placeholder="City" type="text" id="input-address-city"/>
-            <br>
-            <select id="input-address-state">
-                <option disabled selected value="">State</option>
-                <option value="AL">AL</option>
-                <option value="AK">AK</option>
-                <option value="AR">AR</option>
-                <option value="AZ">AZ</option>
-                <option value="CA">CA</option>
-                <option value="CO">CO</option>
-                <option value="CT">CT</option>
-                <option value="DC">DC</option>
-                <option value="DE">DE</option>
-                <option value="FL">FL</option>
-                <option value="GA">GA</option>
-                <option value="HI">HI</option>
-                <option value="IA">IA</option>
-                <option value="ID">ID</option>
-                <option value="IL">IL</option>
-                <option value="IN">IN</option>
-                <option value="KS">KS</option>
-                <option value="KY">KY</option>
-                <option value="LA">LA</option>
-                <option value="MA">MA</option>
-                <option value="MD">MD</option>
-                <option value="ME">ME</option>
-                <option value="MI">MI</option>
-                <option value="MN">MN</option>
-                <option value="MO">MO</option>
-                <option value="MS">MS</option>
-                <option value="MT">MT</option>
-                <option value="NC">NC</option>
-                <option value="NE">NE</option>
-                <option value="NH">NH</option>
-                <option value="NJ">NJ</option>
-                <option value="NM">NM</option>
-                <option value="NV">NV</option>
-                <option value="NY">NY</option>
-                <option value="ND">ND</option>
-                <option value="OH">OH</option>
-                <option value="OK">OK</option>
-                <option value="OR">OR</option>
-                <option value="PA">PA</option>
-                <option value="RI">RI</option>
-                <option value="SC">SC</option>
-                <option value="SD">SD</option>
-                <option value="TN">TN</option>
-                <option value="TX">TX</option>
-                <option value="UT">UT</option>
-                <option value="VT">VT</option>
-                <option value="VA">VA</option>
-                <option value="WA">WA</option>
-                <option value="WI">WI</option>
-                <option value="WV">WV</option>
-                <option value="WY">WY</option>
-            </select>
-
-            <br/>
-            <input placeholder="Email" type="text" id="input-address-email"/>
-            <br/>
-
+    <div id='div-section-address'>
+        <title>Solar Solution</title>
+        <div class="hero-section">
+            <img src="images/Audi Logo.png">
         </div>
 
-        <div class="column2">
 
-            <input placeholder="Street Address" type="text" id="input-address-street" />
-
-            <br/>
-            <input placeholder="Zip" type="number" id="input-address-zip"/>
-            <br/>
-
-            <input placeholder="Phone Number" type="text" id="input-address-phone"/>
-            <br/>
-
+        <div class="header1">
+            <h2>Solar at My Dealership</h2>
         </div>
 
-    </div>
-
-    <p id="error-message"></p>
-    <br/>
-
-    <button id="button-address-next" onclick="onClickAddressNext()">NEXT</button>
-
-</div> <!-- div-section-address -->
-
-
-<div id="div-section-form" hidden>
-    <div class="header1">
-        <h2>Solar at My Dealership</h2>
-    </div>
-
-    <br/>
-
-    <div class="rectangle">
-    <br/>
-
-    <div class="row">
-        <div class="column">
-            <div class="subheader">
-                <h3> What are you interested in?
-                    <br>(select all that apply)
-                <h3>
-            </div>
-            <br/>
-    
-            <div class="select-section">
-                <input type="checkbox" id="checkbox-rooftop" onclick="doCalculations()">Rooftop Solar</input> 
-                <br/>  
-                <div id="div-form-rooftop" hidden>
-                    <div>What is your approximate rooftop area</div>
-                    <div>(square feet)</div>
-                    <input class="input-form" placeholder="Enter sqft" type="number" id="input-form-sqft"/>
-                    <div>Approximately what percentage of above area is available for solar</div>
-                    <input class="input-form" placeholder="Enter percentage" type="number" id="input-form-percentage"/>
-                    <!--
-                    <div class="percent-tect">
-                        <p>%</p>
-                    </div>
-                    -->
-                </div>
-                <br>
-
-                <input type="checkbox" id="checkbox-canopies" onclick="doCalculations()">Solar Canopies</input> 
-                <br/>
-                <div id="div-form-canopies" hidden>
-                    <div> How many parking spaces </div>
-                    <input class="input-form" id="input-form-canopies" placeholder="Select Number" type="number" />
-                </div>
-                <br>
-
-                <input type="checkbox" id="checkbox-chargers" onclick="doCalculations()">EV Chargers</input>
-                <br/>
-                <div id="div-form-chargingstations" hidden>
-                    <div>How many units</div>
-                    <input class="input-form" id="input-form-chargingstations" placeholder="Select Number" type="number" />
-                </div>  
-
-            <div class="row2">
-                <div class="inner-column1">
-                    <img src="images/DJI_0037.jpeg" alt="Carport" style="width:100%">
-                </div>
-                <div class="inner-column2">
-                    <img src="images/DJI_0183_2.jpg" alt="Carport" style="width:100%">
-                </div>
-                <div class="inner-column3">
-                    <img src="images/DJI_0207_2.jpg" alt="Dealership" style="width:100%">
-                </div>
-                <div class="inner-column4">
-                    <img src="images/DJI_0004.jpeg" alt="Dealership" style="width:100%">
-                </div>
-            </div>
+        <div class="subtext1">
+            <p>Solar Energy can drastically reduce your electricity bills, is financially incentivized, and can be easily installed without disrupting your business. Join Audi dealers across the nation as we drive towards a more sustainable future, today. Based on your needs and geographical location, we will calculate your unique solar solution.</p>
         </div>
-    </div>
-
-    <div class="column">
-        <div class="subheader1">
-            <h3> Your Solar Solution*</h3>
-        </div>
-        <br/>  
         <br/>
-        <div id=label>Annual Electricity Savings</div><input type="text" id="output-savings" disabled/>
-        <div id=label>Total Electricity Savings Over 25 Years of <br> Warrantied Life</div><input type="text" id="output-25years" disabled/>
-        <div id=label>Annual Carbon Offset (MT of CO2)</div><input type="text" id="output-carbon" disabled/>
-        <div id=label>Total Cost**</div><input type="text" id="output-cost" disabled/>
-        <div id=label>Total Tax Benefits <br>(Tax Credit and Depreciation)</div><input type="text" id="output-tax-total" disabled/>
-        <div id=label>Net Cost After Tax Benefits</div><input type="text" id="output-netcost" disabled/>        
-        <div id=label>Total kW of Electricity Produced</div><input type="text" id="output-pvsize" disabled/>
+
+        <input placeholder="Dealership Name"text" id="input-address-name"/>
+        <br/>
+        <br/>
+        <div class="row">
+            <div class="column1">
+                <input placeholder="City" type="text" id="input-address-city"/>
+                <br>
+                <select id="input-address-state">
+                    <option disabled selected value="">State</option>
+                    <option value="AL">AL</option>
+                    <option value="AK">AK</option>
+                    <option value="AR">AR</option>
+                    <option value="AZ">AZ</option>
+                    <option value="CA">CA</option>
+                    <option value="CO">CO</option>
+                    <option value="CT">CT</option>
+                    <option value="DC">DC</option>
+                    <option value="DE">DE</option>
+                    <option value="FL">FL</option>
+                    <option value="GA">GA</option>
+                    <option value="HI">HI</option>
+                    <option value="IA">IA</option>
+                    <option value="ID">ID</option>
+                    <option value="IL">IL</option>
+                    <option value="IN">IN</option>
+                    <option value="KS">KS</option>
+                    <option value="KY">KY</option>
+                    <option value="LA">LA</option>
+                    <option value="MA">MA</option>
+                    <option value="MD">MD</option>
+                    <option value="ME">ME</option>
+                    <option value="MI">MI</option>
+                    <option value="MN">MN</option>
+                    <option value="MO">MO</option>
+                    <option value="MS">MS</option>
+                    <option value="MT">MT</option>
+                    <option value="NC">NC</option>
+                    <option value="NE">NE</option>
+                    <option value="NH">NH</option>
+                    <option value="NJ">NJ</option>
+                    <option value="NM">NM</option>
+                    <option value="NV">NV</option>
+                    <option value="NY">NY</option>
+                    <option value="ND">ND</option>
+                    <option value="OH">OH</option>
+                    <option value="OK">OK</option>
+                    <option value="OR">OR</option>
+                    <option value="PA">PA</option>
+                    <option value="RI">RI</option>
+                    <option value="SC">SC</option>
+                    <option value="SD">SD</option>
+                    <option value="TN">TN</option>
+                    <option value="TX">TX</option>
+                    <option value="UT">UT</option>
+                    <option value="VT">VT</option>
+                    <option value="VA">VA</option>
+                    <option value="WA">WA</option>
+                    <option value="WI">WI</option>
+                    <option value="WV">WV</option>
+                    <option value="WY">WY</option>
+                </select>
+
+                <br/>
+                <input placeholder="Email" type="text" id="input-address-email"/>
+                <br/>
+
+            </div>
+
+            <div class="column2">
+
+                <input placeholder="Street Address" type="text" id="input-address-street" />
+
+                <br/>
+                <input placeholder="Zip" type="number" id="input-address-zip"/>
+                <br/>
+
+                <input placeholder="Phone Number" type="text" id="input-address-phone"/>
+                <br/>
+
+            </div>
+
+        </div>
+
+        <p id="error-message"></p>
+        <br/>
+
+        <button id="button-address-next" onclick="onClickAddressNext()">NEXT</button>
+
+    </div> <!-- div-section-address -->
+
+
+    <div id="div-section-form" hidden>
+        <div class="header1">
+            <h2>Solar at My Dealership</h2>
+        </div>
+
+        <br/>
+
+        <div class="rectangle">
         <br/>
 
         <div class="row">
-            <div class="small-column">
-                <div class="button-email">
-                    <input type="button" id='button-email' value="Get In Touch" onclick="sendEmail()"/>
+            <div class="column">
+                <div class="subheader">
+                    <h3> What are you interested in?
+                        <br>(select all that apply)
+                    <h3>
+                </div>
+                <br/>
+        
+                <div class="select-section">
+                    <input type="checkbox" id="checkbox-rooftop" onclick="doCalculations()">Rooftop Solar</input> 
+                    <br/>  
+                    <div id="div-form-rooftop" hidden>
+                        <div>What is your approximate rooftop area</div>
+                        <div>(square feet)</div>
+                        <input class="input-form" placeholder="Enter sqft" type="number" id="input-form-sqft"/>
+                        <div>Approximately what percentage of above area is available for solar</div>
+                        <input class="input-form" placeholder="Enter percentage" type="number" id="input-form-percentage"/>
+                        <!--
+                        <div class="percent-tect">
+                            <p>%</p>
+                        </div>
+                        -->
                     </div>
-                    <div class="button-print">
-                        <input type="button" id='button-print' onclick="window.print()" value="Print"/>
-                        </div>
-                        </div>
+                    <br>
+
+                    <input type="checkbox" id="checkbox-canopies" onclick="doCalculations()">Solar Canopies</input> 
+                    <br/>
+                    <div id="div-form-canopies" hidden>
+                        <div> How many parking spaces </div>
+                        <input class="input-form" id="input-form-canopies" placeholder="Select Number" type="number" />
+                    </div>
+                    <br>
+
+                    <input type="checkbox" id="checkbox-chargers" onclick="doCalculations()">EV Chargers</input>
+                    <br/>
+                    <div id="div-form-chargingstations" hidden>
+                        <div>How many units</div>
+                        <input class="input-form" id="input-form-chargingstations" placeholder="Select Number" type="number" />
+                    </div>  
+
+                <div class="row2">
+                    <div class="inner-column1">
+                        <img src="images/DJI_0037.jpeg" alt="Carport" style="width:100%">
+                    </div>
+                    <div class="inner-column2">
+                        <img src="images/DJI_0183_2.jpg" alt="Carport" style="width:100%">
+                    </div>
+                    <div class="inner-column3">
+                        <img src="images/DJI_0207_2.jpg" alt="Dealership" style="width:100%">
+                    </div>
+                    <div class="inner-column4">
+                        <img src="images/DJI_0004.jpeg" alt="Dealership" style="width:100%">
                     </div>
                 </div>
-            <div id="p-thanks" hidden>Thank you! Someone from our team will be in touch with you shortly!</div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="subheader1">
+                <h3> Your Solar Solution*</h3>
+            </div>
+            <br/>  
             <br/>
+            <div id=label>Annual Electricity Savings</div><input type="text" id="output-savings" disabled/>
+            <div id=label>Total Electricity Savings Over 25 Years of <br> Warrantied Life</div><input type="text" id="output-25years" disabled/>
+            <div id=label>Annual Carbon Offset (MT of CO2)</div><input type="text" id="output-carbon" disabled/>
+            <div id=label>Total Cost**</div><input type="text" id="output-cost" disabled/>
+            <div id=label>Total Tax Benefits <br>(Tax Credit and Depreciation)</div><input type="text" id="output-tax-total" disabled/>
+            <div id=label>Net Cost After Tax Benefits</div><input type="text" id="output-netcost" disabled/>        
+            <div id=label>Total kW of Electricity Produced</div><input type="text" id="output-pvsize" disabled/>
+            <br/>
+
+            <div class="row">
+                <div class="small-column">
+                    <div class="button-email">
+                        <input type="button" id='button-email' value="Get In Touch" onclick="sendEmail()"/>
+                        </div>
+                        <div class="button-print">
+                            <input type="button" id='button-print' onclick="window.print()" value="Print"/>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                <div id="p-thanks" hidden>Thank you! Someone from our team will be in touch with you shortly!</div>
+                <br/>
+            </div>
         </div>
-    </div>
 
-    <h4><em>*This is a preliminary evaluation, subject to detailed design & enginee
-    <br>**Total Cost includes both the installation and cost of the product</em></h4>
-</div> <!-- div-section-form -->
+        <h4><em>*This is a preliminary evaluation, subject to detailed design & enginee
+        <br>**Total Cost includes both the installation and cost of the product</em></h4>
+    </div> <!-- div-section-form -->
 
-<div id="div-section-thanks" hidden>
-    <div class="header1">
-        <h2> Get In Touch</h2>
-    </div>
+    <div id="div-section-thanks" hidden>
+        <div class="header1">
+            <h2> Get In Touch</h2>
+        </div>
 
-    <div class="rectangle2">
-        <br>
-        <div class="subtext1">
-            <h7>
-                Your Information Has Been Received and You Will Be Contacted By A Renewvia Energy Professional in 24 hours.
-                <br>
-                <br>
-                Renewvia is Top-500 soral contractor based in Atlanta, GA. We specialize in turning 
-                unused square footage into a cash-generating asset for dealerships, factories, 
-                farms, and any other client with roof or ground space to spare.
-            </h7>
+        <div class="rectangle2">
             <br>
+            <div class="subtext1">
+                <h7>
+                    Your Information Has Been Received and You Will Be Contacted By A Renewvia Energy Professional in 24 hours.
+                    <br>
+                    <br>
+                    Renewvia is Top-500 soral contractor based in Atlanta, GA. We specialize in turning 
+                    unused square footage into a cash-generating asset for dealerships, factories, 
+                    farms, and any other client with roof or ground space to spare.
+                </h7>
+                <br>
+            </div>
         </div>
-    </div>
 
 
-    <div class="contact-content">
-            <img class="logo" src="images/renewvia-logo-web.jpg">
-    <br>
-
-    <h5>
-        Solar Progress
+        <div class="contact-content">
+                <img class="logo" src="images/renewvia-logo-web.jpg">
         <br>
-        Renewvia Energy
-        <br>
-        <a href="mailto:info@renewvia.com">info@renewvia.com</a>
-        <br>404-856-4372
-    </h5>
 
+        <h5>
+            Solar Progress
+            <br>
+            Renewvia Energy
+            <br>
+            <a href="mailto:info@renewvia.com">info@renewvia.com</a>
+            <br>404-856-4372
+        </h5>
+
+        </div>
+
+    </div> <!-- div-section-thanks -->
+
+    <div class="footer-section">
+        <img class="renewvia-logo" src="images/renewvia-logo-web.jpg">
     </div>
-
-</div> <!-- div-section-thanks -->
-
-<div class="footer-section">
-    <img class="renewvia-logo" src="images/renewvia-logo-web.jpg">
-</div>
 
 </body>
 
