@@ -1,5 +1,4 @@
 body,html {
-  background-image: url('images/Bg-img-2.png');
   background-repeat: no-repeat!important;
   background-size: cover;
   height: 100%;
@@ -12,11 +11,13 @@ body,html {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.hero-section {
-  height: 40px;
+
+.hero-section img {
+  height: auto;
   width: 60px;
+  float: left;
   margin-left: 0.5em;
-  padding-top: 0.5em;
+  padding-top: 0.2em;
   align-items: right;
 }
 
