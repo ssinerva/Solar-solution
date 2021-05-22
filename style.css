@@ -223,7 +223,7 @@ transition-duration: .5s;}
 
 @media screen and (max-width: 600px) {
  .column1, .column2, input[type=submit] {
-    width: 100%;
+    width: auto;
     margin-top: 0;
     float: left;
   }
@@ -347,11 +347,10 @@ transition-duration: 0.5s;
 
 
 /* Calculator Page */
-
-
 .rectangle {
-
-  margin: 0px 63px 73.5px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 85%;
   padding: 40px 36px 30px 30px;
   opacity: 0.94;
   border-radius: 5px;
@@ -361,11 +360,8 @@ transition-duration: 0.5s;
 
 @media  screen and (max-width: 600px) {
   .rectangle {
-    width: 80%;
-   float: left;
    padding-bottom: 20px;
   }
-  
 }
 
 .row {
