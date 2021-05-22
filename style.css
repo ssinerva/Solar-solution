@@ -73,6 +73,7 @@ body,html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  min-height: calc(100vh - 50px);
 }
 
 #div-section-form {
@@ -850,10 +851,11 @@ padding: 0px;
 
 
 .footer-section {
-
   background-color: rgb(255, 255, 255);
-  opacity: 0.6;
+  opacity: 0.9;
   width: 100vw;
   padding-top: 10px;
-
+  left: 0px;
+  bottom: 0px;
+  height: 50px;
 }
