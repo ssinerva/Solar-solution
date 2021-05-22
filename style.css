@@ -72,19 +72,24 @@ body,html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-
 }
 
 #div-section-form {
-  background-image: url('images/bg-img.png');
+  background: url('images/bg-img.png') center cover;
   background-repeat: no-repeat!important;
-  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 #div-section-thanks {
-  background-image: url('images/bg-img.png');
+  background: url('images/bg-img.png') center cover;
   background-repeat: no-repeat!important;
-
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 
@@ -105,7 +110,7 @@ transition-duration: .5s;}
 @media screen and (max-width: 400px) {
   #input-address-name {
   float:left;
-  margin-left:40px;
+  margin-left:0px;
   margin-bottom:10px;
   }
 }
@@ -208,7 +213,8 @@ transition-duration: .5s;}
      width: 51.5%;
      margin-top: 0;
      float: left;
-     margin-left: 90px;
+     margin-left: 50px;
+     margin-bottom:10px;
    }
  }
 
