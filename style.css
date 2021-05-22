@@ -66,8 +66,12 @@ body,html {
 }
 
 #div-section-address {
-  background-image: url('images/Bg-img-2.png');
+  background: url('images/Bg-img-2.png') center;
   background-repeat: no-repeat!important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 
 }
 
