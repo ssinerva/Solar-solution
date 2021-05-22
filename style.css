@@ -23,14 +23,14 @@ body,html {
 
 .header1 h2{
   display: inline-block;
-     font-family: Arial, Helvetica, sans-serif;
-    font-size: 5vw;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: 1.32px;
-    color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 5vw;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.32px;
+  color: #ffffff;
 }
 
 
@@ -75,7 +75,7 @@ body,html {
 }
 
 #div-section-form {
-  background: url('images/bg-img.png') center cover;
+  background: url('images/bg-img.png') center;
   background-repeat: no-repeat!important;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -84,7 +84,7 @@ body,html {
 }
 
 #div-section-thanks {
-  background: url('images/bg-img.png') center cover;
+  background: url('images/bg-img.png') center;
   background-repeat: no-repeat!important;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -627,7 +627,7 @@ display: inline-block;
 text-transform: uppercase;
 color:rgb(0, 0, 0);
 padding: 6px 10px 6px 10px;
-font-size: 1.3vw;
+font-size: 20px;
 margin-top: 20px;
 margin-bottom: 5px;
 border-radius: 4px;
@@ -649,7 +649,7 @@ border: 1px;
   text-transform: uppercase;
   color:rgb(0, 0, 0);
   padding: 6px 10px 6px 10px;
-  font-size: 1.3vw;
+  font-size: 20px;
   margin-top: 20px;
   margin-bottom: 5px;
   border: 1px;
@@ -667,16 +667,12 @@ border: 1px;
 @media screen and (max-width: 800px) {
   .button-email {
     width: 100%;
-    margin-left: 70px
-
   }
 }
 
 @media screen and (max-width: 600px) {
   .button-email {
     width: 100%;
-    margin-left: -75px
-
   }
 }
 
@@ -692,25 +688,12 @@ border: 1px;
 @media screen and (max-width: 800px) {
   .button-print {
     width: 100%;
-    margin-left: 55px;
-
   }
 }
 
 @media screen and (max-width: 600px) {
   .button-print {
     width: 100%;
-    margin-left: 0px;
-
-  }
-}
-
-
-@media screen and (max-width: 400px) {
-  .button-print {
-    
-    margin-left: 0px;
-
   }
 }
 
@@ -876,12 +859,11 @@ padding: 0px;
 
 @media screen and (max-width:500px) {
   .renewvia-logo {
-    width: 10px;
-    height: 10px;
+    width: auto;
+    height: auto;
+    max-height: 40px;
     margin-top:0px;
     padding-top: 0px;
-    margin-left: 150px;
-
   }
 }
 
@@ -891,7 +873,6 @@ padding: 0px;
   background-color: rgb(255, 255, 255);
   opacity: 0.6;
   width: 100vw;
-  height: auto;
   padding-top: 10px;
 
 }
