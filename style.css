@@ -8,30 +8,39 @@ body,html {
   -o-background-size: cover;
   background-size: cover;
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0px;
+  font-family: 'AudiType-Normal', Arial, Helvetica, sans-serif;
 }
 
+@font-face {
+  font-family: 'AudiType-Normal';
+    src: url('/Users/David/Documents/Solar-solution-1/Audi Type Print 2/AudiType v4.03 PostScript OpenType/AudiType-Normal_4.03.otf'); /* IE9 Compat Modes */
+    src: url('/Users/David/Documents/Solar-solution-1/Audi Type Print 2/AudiType v4.03 PostScript OpenType/AudiType-Normal.eot') format('embedded-opentype'), /* IE6-IE8 */
+        url('/Users/David/Documents/Solar-solution-1/Audi Type Print 2/AudiType v4.03 PostScript OpenType/AudiType-Normal.woff2') format('woff2'), /* Super Modern Browsers */
+        url('/Users/David/Documents/Solar-solution-1/Audi Type Print 2/AudiType v4.03 PostScript OpenType/AudiType-Normal.woff') format('woff'), /* Pretty Modern Browsers */
+        url('/Users/David/Documents/Solar-solution-1/Audi Type Print 2/AudiType v4.03 PostScript OpenType/AudiType-Normal.ttf')  format('truetype'), /* Safari, Android, iOS */
+        url('/Users/David/Documents/Solar-solution-1/Audi Type Print 2/AudiType v4.03 PostScript OpenType/AudiType-Normal.svg') format('svg'); /* Legacy iOS */
+    font-weight: 400;
+    font-style: normal;
+}
 
 .hero-section img {
   height: auto;
   width: 60px;
   float: left;
   margin-left: 0.5em;
-  padding-top: 0.2em;
+  padding-top: 0.5em;
   align-items: right;
 }
 
 .header1 h2{
   display: inline-block;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 5vw;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: 1.32px;
-  color: #ffffff;
+    font-size: 5vw;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.32px;
+    color: #ffffff;
 }
 
 
@@ -40,7 +49,6 @@ body,html {
   overflow: wrap;
   position: relative;
   margin: 0px 37px 15px 38px;
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 1.6vw;
   font-weight: normal;
   font-stretch: normal;
@@ -67,31 +75,21 @@ body,html {
 }
 
 #div-section-address {
-  background: url('images/Bg-img-2.png') center;
+  background-image: url('images/Bg-img-2.png');
   background-repeat: no-repeat!important;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  min-height: calc(100vh - 50px);
+
 }
 
 #div-section-form {
-  background: url('images/bg-img.png') center;
+  background-image: url('images/bg-img.png');
   background-repeat: no-repeat!important;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  
 }
 
 #div-section-thanks {
-  background: url('images/bg-img.png') center;
+  background-image: url('images/bg-img.png');
   background-repeat: no-repeat!important;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+
 }
 
 
@@ -112,7 +110,7 @@ transition-duration: .5s;}
 @media screen and (max-width: 400px) {
   #input-address-name {
   float:left;
-  margin-left:0px;
+  margin-left:40px;
   margin-bottom:10px;
   }
 }
@@ -215,8 +213,7 @@ transition-duration: .5s;}
      width: 51.5%;
      margin-top: 0;
      float: left;
-     margin-left: 50px;
-     margin-bottom:10px;
+     margin-left: 90px;
    }
  }
 
@@ -224,7 +221,7 @@ transition-duration: .5s;}
 
 @media screen and (max-width: 600px) {
  .column1, .column2, input[type=submit] {
-    width: auto;
+    width: 100%;
     margin-top: 0;
     float: left;
   }
@@ -348,10 +345,11 @@ transition-duration: 0.5s;
 
 
 /* Calculator Page */
+
+
 .rectangle {
-  margin-left: auto;
-  margin-right: auto;
-  width: 85%;
+
+  margin: 0px 63px 73.5px;
   padding: 40px 36px 30px 30px;
   opacity: 0.94;
   border-radius: 5px;
@@ -361,8 +359,11 @@ transition-duration: 0.5s;
 
 @media  screen and (max-width: 600px) {
   .rectangle {
+    width: 80%;
+   float: left;
    padding-bottom: 20px;
   }
+  
 }
 
 .row {
@@ -388,7 +389,7 @@ transition-duration: 0.5s;
   .column, input[type=submit] {
       width: 100%;
       margin-top: 0;
-      margin-left: 0;
+ margin-left: 0;
     }
   }
  
@@ -546,6 +547,10 @@ padding-right: 130px;
   display: table;
 }
 
+#label {
+width: 500px;
+}
+
 .subheader {
   font-size: 1em;
 }
@@ -566,6 +571,7 @@ padding-right: 130px;
 
 @media screen and (max-width: 600px) {
   .subheader1 h3 {
+   
     font-size: 18px;
   }
 }
@@ -615,16 +621,16 @@ padding-right: 130px;
 
 #button-print {
   background-color: lavender;
-  width: 100%;
-  display: inline-block;
-  text-transform: uppercase;
-  color:rgb(0, 0, 0);
-  padding: 6px 10px 6px 10px;
-  font-size: 20px;
-  margin-top: 20px;
-  margin-bottom: 5px;
-  border-radius: 4px;
-  border: 1px;
+width: 100%;
+display: inline-block;
+text-transform: uppercase;
+color:rgb(0, 0, 0);
+padding: 6px 10px 6px 10px;
+font-size: 1.3vw;
+margin-top: 20px;
+margin-bottom: 5px;
+border-radius: 4px;
+border: 1px;
 }
 
 #button-print:hover {
@@ -642,7 +648,7 @@ padding-right: 130px;
   text-transform: uppercase;
   color:rgb(0, 0, 0);
   padding: 6px 10px 6px 10px;
-  font-size: 20px;
+  font-size: 1.3vw;
   margin-top: 20px;
   margin-bottom: 5px;
   border: 1px;
@@ -660,12 +666,16 @@ padding-right: 130px;
 @media screen and (max-width: 800px) {
   .button-email {
     width: 100%;
+    margin-left: 70px
+
   }
 }
 
 @media screen and (max-width: 600px) {
   .button-email {
     width: 100%;
+    margin-left: -75px
+
   }
 }
 
@@ -681,12 +691,25 @@ padding-right: 130px;
 @media screen and (max-width: 800px) {
   .button-print {
     width: 100%;
+    margin-left: 55px;
+
   }
 }
 
 @media screen and (max-width: 600px) {
   .button-print {
     width: 100%;
+    margin-left: 0px;
+
+  }
+}
+
+
+@media screen and (max-width: 400px) {
+  .button-print {
+    
+    margin-left: 0px;
+
   }
 }
 
@@ -721,8 +744,8 @@ h4 {
 
 .rectangle2 {
   height: auto;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 200px;
+  margin-right: 200px;
   margin-bottom: 50px;
   padding-top: 20px;
   padding-bottom: 10px;
@@ -750,6 +773,7 @@ h4 {
 
 @media screen and (max-width:800px) {
   .rectangle2 {
+    float: left;
     width: 400px;
     
   }
@@ -757,6 +781,7 @@ h4 {
 
 @media screen and (max-width:600px) {
   .rectangle2 {
+    margin-left: 100px;
     width: 300px;
     padding-bottom: 10px;
     
@@ -776,19 +801,23 @@ h4 {
   .rectangle2 {
     padding-bottom: 100px;
     font-size: 1.5em;
+    margin-left: 30px;
+
   }
 }
 
 
 .contact-content{
+  position: relative;
+  float: center;
   background-color:#ffffff;
-  text-align:center;
-  padding-bottom:10px;
-  margin-left:auto;
-  margin-right:auto;
-  border-radius: 4px;
-  opacity: 0.7;
-  top: -30px;
+    text-align:center;
+    padding-bottom:10px;
+    margin-left:30vw;
+    margin-right:30vw;
+    border-radius: 4px;
+    opacity: 0.7;
+    top: -30px;
 }
 
 .logo {
@@ -815,6 +844,7 @@ a:-webkit-any-link {
 
  @media screen and (max-width:1200px) {
    .contact-content {
+     margin-top:300px;
      float: center;
    }
  }
@@ -822,12 +852,16 @@ a:-webkit-any-link {
  @media screen and (max-width:800px) {
   .contact-content {
     width: 40%;
+    margin-top:300px;
+    margin-left: 260px;
+
   }
 }
 
 @media screen and (max-width:500px) {
   .contact-content {
     width: 100%;
+    margin-top:400px;
     margin-left: 0px;
   }
 }
@@ -841,21 +875,22 @@ padding: 0px;
 
 @media screen and (max-width:500px) {
   .renewvia-logo {
-    width: auto;
-    height: auto;
-    max-height: 40px;
+    width: 10px;
+    height: 10px;
     margin-top:0px;
     padding-top: 0px;
+    margin-left: 150px;
+
   }
 }
 
 
 .footer-section {
+
   background-color: rgb(255, 255, 255);
-  opacity: 0.9;
+  opacity: 0.6;
   width: 100vw;
+  height: auto;
   padding-top: 10px;
-  left: 0px;
-  bottom: 0px;
-  height: 50px;
+
 }
