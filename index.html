@@ -2,21 +2,19 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <meta meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
     
 <body>
 
-    <div class='section-full-screen' id='div-section-address'>
-
-        <div class="row">
-            <div class="hero-section">
-                <a href="https://www.renewvia.com/">
-                <img src="images/Audi Logo.svg"></a>
-            </div>
+    <div id='div-section-address'>
+        <title>Solar Solution</title>
+        <div class="hero-section">
+            <a href="https://www.renewvia.com/">
+            <img src="images/Audi_Rings_wh-RGB.svg"></a>
         </div>
 
-        <title>Solar Solution</title>
+      
 
         <div class="header1">
             <h2>Solar at My Dealership</h2>
@@ -120,7 +118,7 @@
     </div> <!-- div-section-address -->
 
 
-    <div class='section-full-screen'  id="div-section-form" hidden>
+    <div id="div-section-form" hidden>
         <div class="header1">
             <h2>Solar at My Dealership</h2>
         </div>
@@ -207,10 +205,10 @@
                 <div class="small-column">
                     <div class="button-email">
                         <input type="button" id='button-email' value="Get In Touch" onclick="sendEmail()"/>
-                    </div>
+                        </div>
                         <div class="button-print">
                             <input type="button" id='button-print' onclick="window.print()" value="Print"/>
-                        </div>
+                            </div>
                             </div>
                         </div>
                     </div>
@@ -223,7 +221,7 @@
         <br>**Total Cost includes both the installation and cost of the product</em></h4>
     </div> <!-- div-section-form -->
 
-    <div class='section-full-screen'  id="div-section-thanks" hidden>
+    <div id="div-section-thanks" hidden>
         <div class="header1">
             <h2> Get In Touch</h2>
         </div>
@@ -267,6 +265,12 @@
 
 </body>
 
+
+
+<div class="button">
+    <div id="p-thanks" hidden>Thank you! Someone from our team will be in touch with you shortly!</div>
+    <br/>
+</div>
 
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
@@ -380,7 +384,6 @@
         else {
             document.getElementById("div-section-address").hidden = true;
             document.getElementById("div-section-form").hidden = false;
-            scroll(0,0);
         }
     }
 
@@ -526,7 +529,6 @@
 
         document.getElementById("div-section-form").hidden = true;
         document.getElementById("div-section-thanks").hidden = false;
-        scroll(0,0);
     }
 
 
