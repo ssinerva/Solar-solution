@@ -8,8 +8,20 @@ body,html {
   -o-background-size: cover;
   background-size: cover;
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'AudiType-Normal', Arial, Helvetica, sans-serif;
   margin: 0px;
+}
+
+@font-face {
+  font-family: 'AudiType-Normal';
+    src: url('fonts/AudiType-Normal_4.03.otf'); /* IE9 Compat Modes */
+    src: url('fonts/AudiType-Normal_4.03.eot') format('embedded-opentype'), /* IE6-IE8 */
+        url('fonts/AudiType-Normal_4.03.woff2') format('woff2'), /* Super Modern Browsers */
+        url('fonts/AudiType-Normal_4.03.woff') format('woff'), /* Pretty Modern Browsers */
+        url('fonts/AudiType-Normal_4.03.ttf')  format('truetype'), /* Safari, Android, iOS */
+        url('fonts/AudiType-Normal_4.03.svg') format('svg'); /* Legacy iOS */
+    font-weight: 400;
+    font-style: normal;
 }
 
 
@@ -24,7 +36,6 @@ body,html {
 
 .header1 h2{
   display: inline-block;
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 5vw;
   font-weight: bold;
   font-stretch: normal;
@@ -40,7 +51,6 @@ body,html {
   overflow: wrap;
   position: relative;
   margin: 0px 37px 15px 38px;
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 1.6vw;
   font-weight: normal;
   font-stretch: normal;
@@ -74,6 +84,7 @@ body,html {
   -o-background-size: cover;
   background-size: cover;
   min-height: calc(100vh - 50px);
+  padding-top: 10px;
 }
 
 #div-section-form {
@@ -94,6 +105,14 @@ body,html {
   background-size: cover;
 }
 
+#input-address-contact-name {
+  font-size: 1em;
+  padding: 0.60em;
+  border: 2px darkslategrey;
+  margin-bottom: 0.5em;
+  border-radius: 3px;
+  opacity: 0.9;
+}
 
 #input-address-name {
   padding-bottom: 1em;
@@ -109,6 +128,7 @@ opacity:initial;
 transition-duration: .5s;}
 
 
+
 @media screen and (max-width: 400px) {
   #input-address-name {
   float:left;
@@ -122,13 +142,11 @@ transition-duration: .5s;}
 .column1 {
   float: right;
   width: 52%;
-
 }
 
 .column2 {
   float: right;
   width: 12%;
-
 }
 
 .row:after {
@@ -210,6 +228,7 @@ transition-duration: .5s;}
 
 
 
+ /*
  @media screen and (max-width: 600px) {
   #input-address-name, input[type=submit] {
      width: 51.5%;
@@ -219,7 +238,7 @@ transition-duration: .5s;}
      margin-bottom:10px;
    }
  }
-
+*/
 
 
 @media screen and (max-width: 600px) {
@@ -441,7 +460,6 @@ transition-duration: 0.5s;
 }
 
 #div-form-rooftop {
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
 }
 
@@ -454,13 +472,6 @@ transition-duration: 0.5s;
 }
 
 #checkbox-canopies {
-  height: 20px;
-  width: 20px;
-  margin-right: 10px;
-  margin-bottom: 20px;
-}
-
-#checkbox-chargers {
   height: 20px;
   width: 20px;
   margin-right: 10px;
@@ -692,7 +703,6 @@ padding-right: 130px;
 
 
 .p-thanks {
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   color: #000000;
 }
@@ -710,7 +720,6 @@ h4 {
 
 
 #error-message {
-  font-family: Arial, Helvetica, sans-serif;
   color: rgb(255, 187, 0);
 }
 
@@ -735,7 +744,6 @@ h4 {
 .rectangle2, h7 {
   color: black;
   font-size: 1.3vw;
-  font-family: Arial, Helvetica, sans-serif;
   font-weight: 200;
   word-wrap: break-word;
 }

@@ -12,7 +12,7 @@
         <div class="row">
             <div class="hero-section">
                 <a href="https://www.renewvia.com/">
-                <img src="images/Audi Logo.svg"></a>
+                <img src="images/AudiRingsWhite.svg"></a>
             </div>
         </div>
 
@@ -27,9 +27,16 @@
         </div>
         <br/>
 
-        <input placeholder="Dealership Name"text" id="input-address-name"/>
         <br/>
         <br/>
+        <div class="row">
+            <div class="column1">
+                <input placeholder="Contact Name"text" id="input-address-contact-name"/>
+            </div>
+            <div class="column2">
+                <input placeholder="Dealership Name"text" id="input-address-name"/>
+            </div>
+        </div>
         <div class="row">
             <div class="column1">
                 <input placeholder="City" type="text" id="input-address-city"/>
@@ -96,16 +103,12 @@
             </div>
 
             <div class="column2">
-
                 <input placeholder="Street Address" type="text" id="input-address-street" />
-
                 <br/>
                 <input placeholder="Zip" type="number" id="input-address-zip"/>
                 <br/>
-
                 <input placeholder="Phone Number" type="text" id="input-address-phone"/>
                 <br/>
-
             </div>
 
         </div>
@@ -147,12 +150,10 @@
                         <div>(square feet)</div>
                         <input class="input-form" placeholder="Enter sqft" type="number" id="input-form-sqft"/>
                         <div>Approximately what percentage of above area is available for solar</div>
-                        <input class="input-form" placeholder="Enter percentage" type="number" id="input-form-percentage"/>
-                        <!--
-                        <div class="percent-tect">
-                            <p>%</p>
+                        <div class="block">
+                            <input class="input-form" placeholder="Enter percentage" type="number" id="input-form-percentage"/>
+                            <label>%</label>
                         </div>
-                        -->
                     </div>
                     <br>
 
@@ -161,15 +162,10 @@
                     <div id="div-form-canopies" hidden>
                         <div> How many parking spaces </div>
                         <input class="input-form" id="input-form-canopies" placeholder="Select Number" type="number" />
+                        <div>How many EV Chargers</div>
+                        <input class="input-form" id="input-form-chargingstations" placeholder="Select Number" type="number" />
                     </div>
                     <br>
-
-                    <input type="checkbox" id="checkbox-chargers" onclick="doCalculations()">EV Chargers</input>
-                    <br/>
-                    <div id="div-form-chargingstations" hidden>
-                        <div>How many units</div>
-                        <input class="input-form" id="input-form-chargingstations" placeholder="Select Number" type="number" />
-                    </div>  
 
                 <div class="row2">
                     <div class="inner-column1">
@@ -279,6 +275,7 @@
     var email='';
     var yourName = '';
     var phone ='';
+    var contactName = '';
 
     var canopiesNumberSpaces = 0;
     var chargersNumberSpaces = 0;
@@ -340,6 +337,7 @@
         email = document.getElementById("input-address-email").value;
         yourName = document.getElementById("input-address-name").value;
         phone = document.getElementById("input-address-phone").value;
+        contactName = document.getElementById("input-address-contact-name").value;
 
         var regexStreet = new RegExp("^.+\ .+$");
         var regexCity = new RegExp("^.+$");
@@ -356,17 +354,21 @@
         var validEmail = regexEmail.test(email);
         var validName = regexName.test(yourName);
         var validPhone = regexPhone.test(phone);
+        var validContactName = regexName.test(contactName);
 
         if (validSate) {
             stateEnergyCost=stateEnergyCostLookup[state];
             stateEnergyYeild=stateEnergyYeildLookup[state];
         }
         
-        var isAdderessValid = (validStreet && validCity && validZip && validSate);
+        var isAdderessValid = (validStreet && validCity && validZip);
         //document.getElementById("button-address-next").disabled = !isAdderessValid;
 
         if(!isAdderessValid){
             document.getElementById("error-message").innerHTML="Please enter a valid address for your dealership";
+        }
+        else if(!(validSate)){
+            document.getElementById("error-message").innerHTML="Please select your state";
         }
         else if(!(validEmail)){
             document.getElementById("error-message").innerHTML="Please enter an email address";
@@ -376,6 +378,9 @@
         }
         else if(!(validName)){
             document.getElementById("error-message").innerHTML="Please enter the name of the dealership";
+        }
+        else if(!(validContactName)){
+            document.getElementById("error-message").innerHTML="Please enter a contact name";
         }
         else {
             document.getElementById("div-section-address").hidden = true;
@@ -394,20 +399,14 @@
         // get the value of the checkboxes
         isRooftop = document.getElementById("checkbox-rooftop").checked;
         isCanopies = document.getElementById("checkbox-canopies").checked;
-        isChargers = document.getElementById("checkbox-chargers").checked;
 
         // hide/unhide the inputs depending on the checkboxes
         document.getElementById("div-form-canopies").hidden = !isCanopies;
-        document.getElementById("div-form-chargingstations").hidden = !isChargers;
         document.getElementById("div-form-rooftop").hidden = !isRooftop;
 
         // zero out any they are not interested in
         if (!isCanopies){
             canopiesNumberSpaces = 0;
-        }
-
-        if (!isChargers){
-            chargersNumberSpaces = 0;
         }
 
         if (!isRooftop){
@@ -465,8 +464,8 @@
         var formatter = new Intl.NumberFormat('en-US', {
             style: 'currency', 
             currency: 'USD', 
-            maximumFractionDigits: 2,
-            minimumFractionDigits: 2,
+            maximumFractionDigits: 0,
+            minimumFractionDigits: 0,
             });
             
         document.getElementById("output-pvsize").value=totalSolarPvSizeKw.toLocaleString();
@@ -498,10 +497,10 @@
 
         var templateParams = {
             name: yourName,
+            contactName: contactName,
             email: email,
             address: addressStr,
             interestCanopies: isCanopies,
-            interestChargers: isChargers,
             interestRooftop: isRooftop,
             canopies: canopiesNumberSpaces,
             chargers: chargersNumberSpaces,
