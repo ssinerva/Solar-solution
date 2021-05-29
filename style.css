@@ -9,40 +9,37 @@ body,html {
   background-size: cover;
   text-align: center;
   font-family: 'AudiType-Normal', Arial, Helvetica, sans-serif;
-  margin: 0px;
 }
 
 @font-face {
   font-family: 'AudiType-Normal';
-    src: url('fonts/AudiType-Normal_4.03.otf'); /* IE9 Compat Modes */
-    src: url('fonts/AudiType-Normal_4.03.eot') format('embedded-opentype'), /* IE6-IE8 */
-        url('fonts/AudiType-Normal_4.03.woff2') format('woff2'), /* Super Modern Browsers */
-        url('fonts/AudiType-Normal_4.03.woff') format('woff'), /* Pretty Modern Browsers */
-        url('fonts/AudiType-Normal_4.03.ttf')  format('truetype'), /* Safari, Android, iOS */
-        url('fonts/AudiType-Normal_4.03.svg') format('svg'); /* Legacy iOS */
+    src: url('/Users/David/Documents/Solar-solution-1/Audi Type Print 2/AudiType v4.03 PostScript OpenType/AudiType-Normal_4.03.otf'); /* IE9 Compat Modes */
+    src: url('/Users/David/Documents/Solar-solution-1/Audi Type Print 2/AudiType v4.03 PostScript OpenType/AudiType-Normal.eot') format('embedded-opentype'), /* IE6-IE8 */
+        url('/Users/David/Documents/Solar-solution-1/Audi Type Print 2/AudiType v4.03 PostScript OpenType/AudiType-Normal.woff2') format('woff2'), /* Super Modern Browsers */
+        url('/Users/David/Documents/Solar-solution-1/Audi Type Print 2/AudiType v4.03 PostScript OpenType/AudiType-Normal.woff') format('woff'), /* Pretty Modern Browsers */
+        url('/Users/David/Documents/Solar-solution-1/Audi Type Print 2/AudiType v4.03 PostScript OpenType/AudiType-Normal.ttf')  format('truetype'), /* Safari, Android, iOS */
+        url('/Users/David/Documents/Solar-solution-1/Audi Type Print 2/AudiType v4.03 PostScript OpenType/AudiType-Normal.svg') format('svg'); /* Legacy iOS */
     font-weight: 400;
     font-style: normal;
 }
-
 
 .hero-section img {
   height: auto;
   width: 60px;
   float: left;
   margin-left: 0.5em;
-  padding-top: 0.2em;
-  align-items: right;
+  padding-top: 0.5em;
 }
 
 .header1 h2{
   display: inline-block;
-  font-size: 5vw;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: 1.32px;
-  color: #ffffff;
+    font-size: 5vw;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.32px;
+    color: #ffffff;
 }
 
 
@@ -71,53 +68,41 @@ body,html {
 
 @media screen and (max-width: 600px) {
   .subtext1 p  {
-    font-size: 2.5vw;
+    font-size: 2.8vw;
     width: auto;
   }
 }
 
+input:-internal-autofill-selected {
+  appearance: menulist-button;
+  background-color: rgb(255, 255, 255) !important;
+  background-image: none !important;
+  color: -internal-light-dark(black, white) !important;
+}
+
 #div-section-address {
-  background: url('images/Bg-img-2.png') center;
+  background-image: url('images/Bg-img-2.png');
   background-repeat: no-repeat!important;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  min-height: calc(100vh - 50px);
-  padding-top: 10px;
+
 }
 
 #div-section-form {
-  background: url('images/bg-img.png') center;
+  background-image: url('images/bg-img.png');
   background-repeat: no-repeat!important;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  
 }
 
 #div-section-thanks {
-  background: url('images/bg-img.png') center;
+  background-image: url('images/bg-img.png');
   background-repeat: no-repeat!important;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+
 }
 
-#input-address-contact-name {
-  font-size: 1em;
-  padding: 0.60em;
-  border: 2px darkslategrey;
-  margin-bottom: 0.5em;
-  border-radius: 3px;
-  opacity: 0.9;
-}
 
 #input-address-name {
   padding-bottom: 1em;
   font-size: 1em;
-  padding: 0.60em;
+  padding: 0.40em;
   border: 2px darkslategrey;
   border-radius: 3px;
   opacity: 0.9;
@@ -128,11 +113,10 @@ opacity:initial;
 transition-duration: .5s;}
 
 
-
 @media screen and (max-width: 400px) {
   #input-address-name {
   float:left;
-  margin-left:0px;
+  margin-left:40px;
   margin-bottom:10px;
   }
 }
@@ -142,11 +126,13 @@ transition-duration: .5s;}
 .column1 {
   float: right;
   width: 52%;
+
 }
 
 .column2 {
   float: right;
   width: 12%;
+
 }
 
 .row:after {
@@ -200,7 +186,7 @@ transition-duration: .5s;}
  }
 
 
- @media screen and (max-width: 800px) {
+ @media screen and (max-width: 840px) {
   .column1, input[type=submit] {
     
     width: 50%;
@@ -208,7 +194,7 @@ transition-duration: .5s;}
    }
  }
 
- @media screen and (max-width: 800px) {
+ @media screen and (max-width: 840px) {
   .column2, input[type=submit] {
     
     width: 30%;
@@ -228,22 +214,20 @@ transition-duration: .5s;}
 
 
 
- /*
  @media screen and (max-width: 600px) {
   #input-address-name, input[type=submit] {
      width: 51.5%;
      margin-top: 0;
      float: left;
-     margin-left: 50px;
-     margin-bottom:10px;
+     margin-left: 90px;
    }
  }
-*/
+
 
 
 @media screen and (max-width: 600px) {
  .column1, .column2, input[type=submit] {
-    width: auto;
+    width: 100%;
     margin-top: 0;
     float: left;
   }
@@ -257,7 +241,7 @@ transition-duration: .5s;}
   border: 2px darkslategrey;
   margin-bottom: 0.5em;
   border-radius: 3px;
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
 #input-address-street:hover{
@@ -271,7 +255,7 @@ transition-duration: 0.5s;
   border: 2px darkslategrey;
   margin-bottom: 0.5em;
   border-radius: 3px;
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
 #input-address-city:hover {
@@ -286,21 +270,29 @@ transition-duration: 0.5s;
   border: 2px darkslategrey;
   margin-bottom: 0.5em;
   border-radius: 3px;
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
-#input-address-state:hover {
+select#input-address-state:hover {
+  font-size: 16px;
   opacity:initial;
   transition-duration: 0.5s;
+  border: 2px darkslategrey;
+  }
+
+  #input-address-state:active {
+    background-color: darkslategray;
+    opacity: initial;
   }
 
 #input-address-zip {
+
   font-size: 1em;
   padding: 0.60em;
   border: 2px darkslategrey;
   margin-bottom: 0.5em;
   border-radius: 3px;
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
 #input-address-zip:hover {
@@ -315,7 +307,7 @@ transition-duration: 0.5s;
   border: 2px darkslategrey;
   margin-bottom: 0.5em;
   border-radius: 3px;
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
 #input-address-email:hover {
@@ -329,7 +321,7 @@ transition-duration: 0.5s;
   border: 2px darkslategrey;
   margin-bottom: 0.5em;
   border-radius: 3px;
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
 #input-address-phone:hover {
@@ -367,10 +359,10 @@ transition-duration: 0.5s;
 
 
 /* Calculator Page */
+
+
 .rectangle {
-  margin-left: auto;
-  margin-right: auto;
-  width: 85%;
+  margin: 0px 60px 50px;
   padding: 40px 36px 30px 30px;
   opacity: 0.94;
   border-radius: 5px;
@@ -380,8 +372,11 @@ transition-duration: 0.5s;
 
 @media  screen and (max-width: 600px) {
   .rectangle {
+    width: 80%;
+   float: left;
    padding-bottom: 20px;
   }
+  
 }
 
 .row {
@@ -407,7 +402,7 @@ transition-duration: 0.5s;
   .column, input[type=submit] {
       width: 100%;
       margin-top: 0;
-      margin-left: 0;
+ margin-left: 0;
     }
   }
  
@@ -436,6 +431,7 @@ transition-duration: 0.5s;
 }
 
 .subheader h3 {
+  font-family: 'AudiType-Normal';
   width: 251px;
   margin: 0 30px 3px 0;
   font-weight: normal;
@@ -449,6 +445,7 @@ transition-duration: 0.5s;
 }
 
 .select-section {
+  font-family: 'AudiType-Normal';
   font-size: 16px;
   font-weight: normal;
   font-stretch: normal;
@@ -472,6 +469,13 @@ transition-duration: 0.5s;
 }
 
 #checkbox-canopies {
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+
+#checkbox-chargers {
   height: 20px;
   width: 20px;
   margin-right: 10px;
@@ -510,7 +514,7 @@ label {
   width: 100%;
 padding-right: 130px;
     } 
-    }
+}
 
 .inner-column2 {
   display: flex;
@@ -557,11 +561,16 @@ padding-right: 130px;
   display: table;
 }
 
+#label {
+width: 500px;
+}
+
 .subheader {
   font-size: 1em;
 }
 
 .subheader1 {
+  font-family: 'AudiType-Normal';
   width: 251px;
   margin: 0 30px 3px 0;
   font-size: 1em;
@@ -577,6 +586,7 @@ padding-right: 130px;
 
 @media screen and (max-width: 600px) {
   .subheader1 h3 {
+    font-family: 'AudiType-Normal';
     font-size: 18px;
   }
 }
@@ -625,17 +635,18 @@ padding-right: 130px;
 }
 
 #button-print {
+  font-family: 'AudiType-Normal';
   background-color: lavender;
-  width: 100%;
+  width: 20vw;
   display: inline-block;
   text-transform: uppercase;
   color:rgb(0, 0, 0);
   padding: 6px 10px 6px 10px;
-  font-size: 20px;
+  font-size: 1.5vw;
   margin-top: 20px;
   margin-bottom: 5px;
-  border-radius: 4px;
   border: 1px;
+  border-radius: 4px;
 }
 
 #button-print:hover {
@@ -646,19 +657,48 @@ padding-right: 130px;
 }
 
 
+
+
+
+@media screen and (max-width: 800px) {
+  .button-print {
+    width: 40vw;
+    
+font-size: 1.5w;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .button-print {
+    width: 100%;
+    margin-left: 0px;
+
+  }
+}
+
+
+@media screen and (max-width: 400px) {
+  .button-print {
+    margin-left: 0px;
+
+  }
+}
+
 #button-email {
+  font-family: 'AudiType-Normal';
   background-color: lavender;
-  width: 100%;
+  width: 20vw;
   display: inline-block;
   text-transform: uppercase;
   color:rgb(0, 0, 0);
   padding: 6px 10px 6px 10px;
-  font-size: 20px;
+  font-size: 1.5vw;
   margin-top: 20px;
   margin-bottom: 5px;
   border: 1px;
   border-radius: 4px;
 }
+
 #button-email:hover {
   transition-duration: 0.5s; 
   background-color: rgb(115, 164, 197);
@@ -670,46 +710,42 @@ padding-right: 130px;
 
 @media screen and (max-width: 800px) {
   .button-email {
-    width: 100%;
+    width: 400%;
+
+
   }
 }
 
 @media screen and (max-width: 600px) {
   .button-email {
-    width: 100%;
+
+
+
   }
 }
 
 @media screen and (max-width: 400px) {
   .button-email {
     width: 100%;
-    margin-left: 0px
+ 
 
-  }
-}
-
-
-@media screen and (max-width: 800px) {
-  .button-print {
-    width: 100%;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .button-print {
-    width: 100%;
   }
 }
 
 
 .p-thanks {
+
   font-size: 16px;
   color: #000000;
 }
 
 
 h4 {
-  font-size: 14px;
+text-align: left;
+  margin-top:-30px;
+  margin-bottom: 0px;
+  float: left;
+  font-size: 1.1vw;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -720,7 +756,8 @@ h4 {
 
 
 #error-message {
-  color: rgb(255, 187, 0);
+
+  color: rgb(167, 6, 119);
 }
 
 
@@ -730,8 +767,8 @@ h4 {
 
 .rectangle2 {
   height: auto;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 200px;
+  margin-right: 200px;
   margin-bottom: 50px;
   padding-top: 20px;
   padding-bottom: 10px;
@@ -744,6 +781,7 @@ h4 {
 .rectangle2, h7 {
   color: black;
   font-size: 1.3vw;
+
   font-weight: 200;
   word-wrap: break-word;
 }
@@ -758,6 +796,7 @@ h4 {
 
 @media screen and (max-width:800px) {
   .rectangle2 {
+    float: left;
     width: 400px;
     
   }
@@ -765,6 +804,7 @@ h4 {
 
 @media screen and (max-width:600px) {
   .rectangle2 {
+    margin-left: 100px;
     width: 300px;
     padding-bottom: 10px;
     
@@ -784,19 +824,23 @@ h4 {
   .rectangle2 {
     padding-bottom: 100px;
     font-size: 1.5em;
+    margin-left: 30px;
+
   }
 }
 
 
 .contact-content{
+  position: relative;
+  float: center;
   background-color:#ffffff;
-  text-align:center;
-  padding-bottom:10px;
-  margin-left:auto;
-  margin-right:auto;
-  border-radius: 4px;
-  opacity: 0.7;
-  top: -30px;
+    text-align:center;
+    padding-bottom:10px;
+    margin-left:30vw;
+    margin-right:30vw;
+    border-radius: 4px;
+    opacity: 0.7;
+    top: -30px;
 }
 
 .logo {
@@ -823,6 +867,7 @@ a:-webkit-any-link {
 
  @media screen and (max-width:1200px) {
    .contact-content {
+     margin-top:300px;
      float: center;
    }
  }
@@ -830,40 +875,44 @@ a:-webkit-any-link {
  @media screen and (max-width:800px) {
   .contact-content {
     width: 40%;
+    margin-top:300px;
+    margin-left: 260px;
+
   }
 }
 
 @media screen and (max-width:500px) {
   .contact-content {
     width: 100%;
+    margin-top:400px;
     margin-left: 0px;
-  }
-}
-
- .renewvia-logo {
-  opacity:1;
-max-height: 40px;
-float: left;
-padding: 0px;
-}
-
-@media screen and (max-width:500px) {
-  .renewvia-logo {
-    width: auto;
-    height: auto;
-    max-height: 40px;
-    margin-top:0px;
-    padding-top: 0px;
   }
 }
 
 
 .footer-section {
-  background-color: rgb(255, 255, 255);
-  opacity: 0.9;
   width: 100vw;
-  padding-top: 10px;
-  left: 0px;
-  bottom: 0px;
-  height: 50px;
+  padding-top: 5px;
+
 }
+
+ .renewvia-logo {
+  position:relative;
+  opacity:1;
+  max-height: 20px;
+  float: left;
+  padding-top: 10px;
+}
+
+@media screen and (max-width:500px) {
+  .renewvia-logo  {
+    width: 10px;
+    height: 10px;
+    margin-top:0px;
+    padding-top: 0px;
+    margin-left: 150px;
+
+  }
+}
+
+
