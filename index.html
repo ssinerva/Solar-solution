@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css?v=2">
+    <link rel="stylesheet" type="text/css" href="style.css?v=3">
     <meta meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 </head>
     
@@ -11,8 +11,9 @@
 
         <div class="row">
             <div class="hero-section">
-                <a href="https://www.renewvia.com/">
-                <img src="images/AudiRingsWhite.svg"></a>
+                <a href="https://www.audiusa.com/us/web/en.html" target="_blank">
+                    <img src="images/AudiRingsWhite.svg"></a>
+                  </a>
             </div>
         </div>
 
@@ -37,8 +38,25 @@
                 <input placeholder="Dealership Name"text" id="input-address-name"/>
             </div>
         </div>
+
         <div class="row">
             <div class="column1">
+                <input placeholder="Phone Number" type="text" id="input-address-phone"/>
+            </div>
+            <div class="column2">
+                <input placeholder="Email" type="text" id="input-address-email"/>
+            </div>
+            <br/>
+        </div>
+        
+        <div class="row">
+            <div class="column1">
+                <input placeholder="Street Address" type="text" id="input-address-street" />
+                <br/>
+                <input placeholder="Zip" type="number" id="input-address-zip"/>
+                <br/>
+            </div>
+            <div class="column2">
                 <input placeholder="City" type="text" id="input-address-city"/>
                 <br>
                 <select id="input-address-state">
@@ -95,22 +113,7 @@
                     <option value="WV">WV</option>
                     <option value="WY">WY</option>
                 </select>
-
-                <br/>
-                <input placeholder="Email" type="text" id="input-address-email"/>
-                <br/>
-
             </div>
-
-            <div class="column2">
-                <input placeholder="Street Address" type="text" id="input-address-street" />
-                <br/>
-                <input placeholder="Zip" type="number" id="input-address-zip"/>
-                <br/>
-                <input placeholder="Phone Number" type="text" id="input-address-phone"/>
-                <br/>
-            </div>
-
         </div>
 
         <p id="error-message"></p>
@@ -193,10 +196,10 @@
             <div id=label>Annual Electricity Savings</div><input type="text" id="output-savings" disabled/>
             <div id=label>Total Electricity Savings Over 25 Years of <br> Warrantied Life</div><input type="text" id="output-25years" disabled/>
             <div id=label>Annual Carbon Offset (MT of CO2)</div><input type="text" id="output-carbon" disabled/>
-            <div id=label>Total Cost**</div><input type="text" id="output-cost" disabled/>
+            <div id=label>Total Cost (including material and labor)</div><input type="text" id="output-cost" disabled/>
             <div id=label>Total Tax Benefits <br>(Tax Credit and Depreciation)</div><input type="text" id="output-tax-total" disabled/>
             <div id=label>Net Cost After Tax Benefits</div><input type="text" id="output-netcost" disabled/>        
-            <div id=label>Size of Solar System (kW)</div><input type="text" id="output-pvsize" disabled/>
+            <div id=label>Total kW of Electricity Produced</div><input type="text" id="output-pvsize" disabled/>
             <br/>
 
             <div class="row">
@@ -215,8 +218,7 @@
             </div>
         </div>
 
-        <h4><em>*This is a preliminary evaluation, subject to detailed design & enginee
-        <br>**Total Cost includes both the installation and cost of the product</em></h4>
+        <h4><em>*This is a preliminary evaluation, subject to detailed design & engineering</em></h4>
     </div> <!-- div-section-form -->
 
     <div class='section-full-screen'  id="div-section-thanks" hidden>
@@ -228,7 +230,7 @@
             <br>
             <div class="subtext1">
                 <h7>
-                    Your Information Has Been Received and You Will Be Contacted By A Renewvia Energy Professional in 24 hours.
+                    Your information has been received and you will be contacted by a Renewvia Energy professional in 24 hours.
                     <br>
                     <br>
                     Renewvia is Top-500 solar contractor based in Atlanta, GA. We specialize in turning 
@@ -258,7 +260,9 @@
     </div> <!-- div-section-thanks -->
 
     <div class="footer-section">
-        <img class="renewvia-logo" src="images/renewvia-logo-web.jpg">
+        <a href="https://www.renewvia.com/" target="_blank">
+            <img class="renewvia-logo" src="images/renewvia-logo-web.jpg">
+          </a>
     </div>
 
 </body>

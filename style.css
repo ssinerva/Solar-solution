@@ -25,6 +25,15 @@ body,html {
 }
 
 
+/* handle autofill so that all inputs are same color */
+input:-internal-autofill-selected {
+  appearance: menulist-button;
+  background-color: rgb(255, 255, 255) !important;
+  background-image: none !important;
+  color: -internal-light-dark(black, white) !important;
+}
+
+
 .hero-section img {
   height: auto;
   width: 60px;
@@ -71,7 +80,7 @@ body,html {
 
 @media screen and (max-width: 600px) {
   .subtext1 p  {
-    font-size: 2.5vw;
+    font-size: 2.8vw;
     width: auto;
   }
 }
@@ -119,6 +128,7 @@ body,html {
   font-size: 1em;
   padding: 0.60em;
   border: 2px darkslategrey;
+  margin-bottom: 0.5em;
   border-radius: 3px;
   opacity: 0.9;
 }
@@ -436,6 +446,7 @@ transition-duration: 0.5s;
 }
 
 .subheader h3 {
+  font-family: 'AudiType-Normal';
   width: 251px;
   margin: 0 30px 3px 0;
   font-weight: normal;
@@ -449,6 +460,7 @@ transition-duration: 0.5s;
 }
 
 .select-section {
+  font-family: 'AudiType-Normal';
   font-size: 16px;
   font-weight: normal;
   font-stretch: normal;
@@ -507,8 +519,8 @@ label {
 
   @media screen and (max-width:800px) {
     .inner-column1 {
-  width: 100%;
-padding-right: 130px;
+      width: 100%;
+      padding-right: 130px;
     } 
     }
 
@@ -558,11 +570,12 @@ padding-right: 130px;
 }
 
 .subheader {
+  font-family: 'AudiType-Normal';
   font-size: 1em;
 }
 
 .subheader1 {
-  width: 251px;
+  font-family: 'AudiType-Normal';
   margin: 0 30px 3px 0;
   font-size: 1em;
   font-weight: normal;
@@ -625,6 +638,7 @@ padding-right: 130px;
 }
 
 #button-print {
+  font-family: 'AudiType-Normal';
   background-color: lavender;
   width: 100%;
   display: inline-block;
@@ -647,6 +661,7 @@ padding-right: 130px;
 
 
 #button-email {
+  font-family: 'AudiType-Normal';
   background-color: lavender;
   width: 100%;
   display: inline-block;
