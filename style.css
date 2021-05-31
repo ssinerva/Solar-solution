@@ -112,6 +112,7 @@ input:-internal-autofill-selected {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  min-height: calc(100vh - 50px);
 }
 
 #input-address-contact-name {
