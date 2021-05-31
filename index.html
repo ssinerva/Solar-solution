@@ -127,6 +127,15 @@
 
 
     <div class='section-full-screen'  id="div-section-form" hidden>
+
+        <div class="row">
+            <div class="hero-section">
+                <a href="https://www.audiusa.com/us/web/en.html" target="_blank">
+                    <img src="images/AudiRingsWhite.svg"></a>
+                  </a>
+            </div>
+        </div>
+
         <div class="header1">
             <h2>Solar at My Dealership</h2>
         </div>
@@ -222,6 +231,15 @@
     </div> <!-- div-section-form -->
 
     <div class='section-full-screen'  id="div-section-thanks" hidden>
+
+        <div class="row">
+            <div class="hero-section">
+                <a href="https://www.audiusa.com/us/web/en.html" target="_blank">
+                    <img src="images/AudiRingsWhite.svg"></a>
+                  </a>
+            </div>
+        </div>
+
         <div class="header1">
             <h2> Get In Touch</h2>
         </div>
@@ -472,9 +490,9 @@
             minimumFractionDigits: 0,
             });
             
-        document.getElementById("output-pvsize").value=totalSolarPvSizeKw.toLocaleString();
+        document.getElementById("output-pvsize").value=Math.floor(totalSolarPvSizeKw).toLocaleString();
         document.getElementById("output-cost").value=formatter.format(totalCost);
-        document.getElementById("output-carbon").value=totalCarbonOffsetTons.toLocaleString();
+        document.getElementById("output-carbon").value=Math.floor(totalCarbonOffsetTons).toLocaleString();
         document.getElementById("output-savings").value=formatter.format(totalAnnualElectricitySavings);
         document.getElementById("output-tax-total").value=formatter.format(totalTaxBenefits);
         document.getElementById("output-netcost").value=formatter.format(totalNetCostAfterTaxBenefits);
