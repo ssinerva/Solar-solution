@@ -31,35 +31,36 @@
         <br/>
         <br/>
         <div class="row">
-            <div class="column1">
-                <input placeholder="Contact Name"text" id="input-address-contact-name"/>
+            <div class="column">
+                <input placeholder="Contact Name"text" class="right" id="input-address-contact-name"/>
             </div>
-            <div class="column2">
-                <input placeholder="Dealership Name"text" id="input-address-name"/>
+            <div class="column">
+                <input placeholder="Dealership Name"text" class="left" id="input-address-name"/>
             </div>
         </div>
 
         <div class="row">
-            <div class="column1">
-                <input placeholder="Phone Number" type="text" id="input-address-phone"/>
+            <div class="column">
+                <input placeholder="Phone Number" class="right" type="text" id="input-address-phone"/>
             </div>
-            <div class="column2">
-                <input placeholder="Email" type="text" id="input-address-email"/>
+            <div class="column">
+                <input placeholder="Email" class="left" type="text" id="input-address-email"/>
             </div>
             <br/>
         </div>
         
         <div class="row">
-            <div class="column1">
-                <input placeholder="Street Address" type="text" id="input-address-street" />
-                <br/>
-                <input placeholder="Zip" type="number" id="input-address-zip"/>
-                <br/>
+            <div class="column">
+                <input placeholder="Street Address" class="right" id="input-address-street" />
             </div>
-            <div class="column2">
-                <input placeholder="City" type="text" id="input-address-city"/>
-                <br>
-                <select id="input-address-state">
+            <div class="column">
+                <input placeholder="City" class="left" type="text" id="input-address-city"/>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column">
+                <select class="right " id="input-address-state">
                     <option disabled selected value="">State</option>
                     <option value="AL">AL</option>
                     <option value="AK">AK</option>
@@ -114,7 +115,15 @@
                     <option value="WY">WY</option>
                 </select>
             </div>
+            <div class="column">
+                <input placeholder="Zip" class="left" type="number" id="input-address-zip"/>
+            </div>
         </div>
+
+
+
+        
+
 
         <p id="error-message"></p>
         <br/>
