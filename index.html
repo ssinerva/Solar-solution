@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css?v=4">
+    <link rel="stylesheet" type="text/css" href="style.css?v=5">
     <meta meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 </head>
     
@@ -60,7 +60,7 @@
 
         <div class="row">
             <div class="column">
-                <select class="right " id="input-address-state">
+                <select class="right " onchange="onStateChange(this)" id="input-address-state">
                     <option disabled selected value="">State</option>
                     <option value="AL">AL</option>
                     <option value="AK">AK</option>
@@ -355,6 +355,11 @@
         });
         */
 
+    }
+
+    // just to change the state selction from gray to black
+    function onStateChange(sel) {
+      sel.style.color = "#000";              
     }
 
     function onClickAddressNext(){

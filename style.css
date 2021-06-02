@@ -160,6 +160,10 @@ transition-duration: .5s;}
 }
 
 
+select {
+    color: #888;
+}
+
 
 
 #input-address-street {
