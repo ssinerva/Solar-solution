@@ -88,7 +88,7 @@ input:-internal-autofill-selected {
 
 .subtext1 p {
   float: center;
-  width: 650px;
+  width: 900px;
   line-height: 1em;
   color: rgb(255, 255, 255);
 }
@@ -101,7 +101,7 @@ input:-internal-autofill-selected {
 }
 
 #div-section-address {
-  background: url('images/Bg-img-2.png') center;
+  background: linear-gradient( rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15) ), url('images/Bg-img-2.png') center;
   background-repeat: no-repeat!important;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -112,7 +112,7 @@ input:-internal-autofill-selected {
 }
 
 #div-section-form {
-  background: url('images/bg-img.png') center;
+  background: linear-gradient( rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15) ), url('images/bg-img.png') center;
   background-repeat: no-repeat!important;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -121,7 +121,7 @@ input:-internal-autofill-selected {
 }
 
 #div-section-thanks {
-  background: url('images/bg-img.png') center;
+  background: linear-gradient( rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15) ), url('images/bg-img.png') center;
   background-repeat: no-repeat!important;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -658,7 +658,7 @@ h4 {
 
 .rectangle2, h7 {
   color: black;
-  font-size: 1.3vw;
+  font-size: 1.5vw;
   font-weight: 200;
   word-wrap: break-word;
 }
@@ -666,7 +666,7 @@ h4 {
 
 @media screen and (max-width:800px) {
   .rectangle2, h7 {
-    font-size: 1em;
+    font-size: 2em;
     
   }
 }
@@ -689,7 +689,7 @@ h4 {
 
 @media screen and (max-width:600px) {
   .rectangle2 h7 {
-    font-size: 1.5em;
+    font-size: 2em;
 
   }
 }
